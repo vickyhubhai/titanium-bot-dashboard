@@ -138,7 +138,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Titanium Security",
-          url: "https://astral-dashboard-73.lovable.app",
+          url: "https://titaniumsecurity.dpdns.org",
           logo: "https://titaniumsecurity.dpdns.org/favicon.svg",
           image: "https://titaniumsecurity.dpdns.org/og-image.png",
           description: "Enterprise-grade security, moderation and antinuke platform for Discord servers.",
