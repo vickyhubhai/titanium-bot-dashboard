@@ -1,6 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 const DEFAULT_BASE_URL = "https://titaniumsecurity.dpdns.org";
+function escapeXml(str: string = "") {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
 
 interface SitemapEntry {
   path: string;
