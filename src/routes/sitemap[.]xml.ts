@@ -62,10 +62,10 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const urls = entries
           .map((e) => {
-            let urlXml = `  <url>\n    <loc>${domain}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n`;
+            let urlXml = `  <url>\n    <loc>${escapeXml(domain + e.path)}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n`;
             
             // Image Sitemap data
-            urlXml += `    <image:image>\n      <image:loc>${domain}/og-image.png</image:loc>\n      <image:title>${e.title}</image:title>\n    </image:image>\n`;
+            urlXml += `    <image:image>\n      <image:loc>${escapeXml(domain + "/og-image.png")}</image:loc>\n      <image:title>${escapeXml(e.title)}</image:title>\n    </image:image>\n`;
 
             // Future ready News Sitemap tags for blogs
             if (e.isBlog) {
