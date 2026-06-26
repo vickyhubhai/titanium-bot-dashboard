@@ -189,6 +189,12 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  
+  useEffect(() => {
+  if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+    ...
+  }
+}, []);
 
   useEffect(() => {
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
