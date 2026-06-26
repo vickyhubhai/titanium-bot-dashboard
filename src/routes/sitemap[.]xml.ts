@@ -70,7 +70,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             // Future ready News Sitemap tags for blogs
             if (e.isBlog) {
               const today = new Date().toISOString().split("T")[0];
-              urlXml += `    <news:news>\n      <news:publication>\n        <news:name>Titanium Security</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${today}</news:publication_date>\n      <news:title>${e.title}</news:title>\n    </news:news>\n`;
+              urlXml += `    <news:news>\n      <news:publication>\n        <news:name>Titanium Security</news:name>\n        <news:language>en</news:language>\n      </news:publication>\n      <news:publication_date>${today}</news:publication_date>\n      <news:title>${escapeXml(e.title)}</news:title>\n    </news:news>\n`;
             }
 
             urlXml += `  </url>`;
@@ -89,7 +89,7 @@ ${urls}
 
         return new Response(xml, {
           headers: { 
-            "Content-Type": "application/xml", 
+            "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600" 
           },
         });
