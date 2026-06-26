@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-const DEFAULT_BASE_URL = "https://astral-dashboard-73.lovable.app";
+const DEFAULT_BASE_URL = "https://titaniumsecurity.dpdns.org";
 
 interface SitemapEntry {
   path: string;
@@ -88,4 +88,4 @@ ${urls}
       },
     },
   },
-});
+});
