@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /dashboard
-Disallow: /login
+Disallow: /admin
+Disallow: /drafts
+Disallow: /dev
+Disallow: /temporary
 
-Sitemap: https://astral-dashboard-73.lovable.app/sitemap.xml
+Sitemap: https://titaniumsecurity.dpdns.org/sitemap.xml

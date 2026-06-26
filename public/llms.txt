@@ -1,15 +1,15 @@
 # Titanium Security
 
-> Premium Discord security and moderation platform — sub-20ms decisioning, defence-in-depth protection, and a luxurious operator dashboard.
+> Premium Discord security and moderation platform — sub-20ms decisioning, defence-in-depth protection, and detailed forensic logging interfaces.
 
-Titanium Security protects Discord communities from raids, nukes, and abuse with a typed policy engine, real-time analytics, and an audit-grade logging pipeline. Built for the few who take community seriously.
+Titanium Security protects Discord communities from raids, nukes, and abuse with a typed policy engine, and an audit-grade logging pipeline. Built for the few who take community seriously.
 
 ## Pages
 
-- [Home](/): Product overview and live dashboard preview.
+- [Home](/): Product overview.
 - [Features](/features): Modules — Antinuke, Automod, Tickets, Verification, Logging, and more.
 - [Integrations](/integrations): Connect Titanium Security to Slack, GitHub, PagerDuty, Notion and more.
-- [Pricing](/pricing): Free tier and Premium plans.
+- [Premium](/premium): Free tier and Premium plans.
 - [Enterprise](/enterprise): Dedicated capacity, named support, and operational SLAs.
 - [Commands](/commands): Searchable index of every Titanium Security command.
 - [Docs](/docs): Setup guides, module references, and API documentation.
