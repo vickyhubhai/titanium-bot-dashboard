@@ -1,0 +1,31 @@
+# Titanium Security
+
+> Premium Discord security and moderation platform — sub-20ms decisioning, defence-in-depth protection, and a luxurious operator dashboard.
+
+Titanium Security protects Discord communities from raids, nukes, and abuse with a typed policy engine, real-time analytics, and an audit-grade logging pipeline. Built for the few who take community seriously.
+
+## Pages
+
+- [Home](/): Product overview and live dashboard preview.
+- [Features](/features): Modules — Antinuke, Automod, Tickets, Verification, Logging, and more.
+- [Integrations](/integrations): Connect Titanium Security to Slack, GitHub, PagerDuty, Notion and more.
+- [Pricing](/pricing): Free tier and Premium plans.
+- [Enterprise](/enterprise): Dedicated capacity, named support, and operational SLAs.
+- [Commands](/commands): Searchable index of every Titanium Security command.
+- [Docs](/docs): Setup guides, module references, and API documentation.
+- [Roadmap](/roadmap): What is shipping now, next, and later.
+- [Changelog](/changelog): Every shipped change, ordered by date.
+- [Blog](/blog): Field notes on Discord security and platform engineering.
+- [Status](/status): Real-time uptime and incident history.
+- [Security](/security): Controls Titanium Security exposes to operators and disclosure policy.
+- [About](/about): Story, principles, and team behind Titanium Security.
+- [Careers](/careers): Open roles at Titanium Security.
+- [Partners](/partners): Refer, resell, or build on Titanium Security.
+- [Support](/support): Knowledge base and ticket intake.
+- [Contact](/contact): Reach the team.
+
+## Optional
+
+- [Privacy](/privacy): Privacy policy.
+- [Cookies](/cookies): Cookie and local-storage policy.
+- [Terms](/terms): Terms of service.
