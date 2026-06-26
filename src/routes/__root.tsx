@@ -107,6 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "application-name", content: "Titanium Security" },
       { name: "msapplication-TileColor", content: "#0a0a14" },
       { name: "msapplication-config", content: "/browserconfig.xml" },
+      { name: "google-site-verification", content: "eDC68pTh-rPXDSNL6Y0FnzJWLbyE2MrnFzGn9m7oIvM" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
