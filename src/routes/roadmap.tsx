@@ -5,13 +5,24 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute("/roadmap")({
   head: () => ({
     meta: [
-      { title: "Roadmap — Titanium Security" },
-      { name: "description", content: "What we are building next. The Titanium Security public roadmap, refreshed every quarter." },
-      { property: "og:title", content: "Roadmap — Titanium Security" },
-      { property: "og:description", content: "Now, next, and later — the public Titanium Security roadmap refreshed every quarter." },
-      { property: "og:url", content: "/roadmap" },
+      { title: "Public Product Roadmap — Titanium Security" },
+      { name: "description", content: "Stay updated on the future of Discord security. Review what Titanium Security is shipping now, what's coming up next, and our long-term roadmap." },
+      { property: "og:title", content: "Public Product Roadmap — Titanium Security" },
+      { property: "og:description", content: "Now, next, and later — the public Titanium Security product roadmap refreshed every quarter." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/roadmap" },
     ],
-    links: [{ rel: "canonical", href: "/roadmap" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/roadmap" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Public Roadmap",
+          "description": "Information on the development progress, active feature builds, and future releases of Titanium Security Discord bot modules."
+        })
+      }
+    ]
   }),
   component: RoadmapPage,
 });

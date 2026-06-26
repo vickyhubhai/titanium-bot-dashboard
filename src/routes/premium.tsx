@@ -5,12 +5,52 @@ import { Check, Star, ShieldCheck, Zap } from "lucide-react";
 export const Route = createFileRoute("/premium")({
   head: () => ({
     meta: [
-      { title: "Premium — Titanium Security" },
-      { name: "description", content: "Supercharge your community safety. Compare Free, Premium and Enterprise protection for Discord." },
-      { property: "og:title", content: "Premium — Titanium Security" },
-      { property: "og:url", content: "/premium" },
+      { title: "Premium Pricing & Tiers — Titanium Security Discord Bot" },
+      { name: "description", content: "Supercharge your community protection. Compare Free ($0), Premium ($9.99/mo), and Enterprise pricing tiers for advanced antinuke, proxy blocks, and 24/7 SLA support." },
+      { property: "og:title", content: "Premium Pricing & Tiers — Titanium Security" },
+      { property: "og:description", content: "Unleash SuperAntinuke signatures, custom branding, and 90-day forensic log history. Upgrade your Discord security." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/premium" },
     ],
-    links: [{ rel: "canonical", href: "/premium" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/premium" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Titanium Security Premium Plan",
+          "image": "https://titaniumsecurity.dpdns.org/og-image.png",
+          "description": "SuperAntinuke protection, custom branding, 90-day log history, and priority SLA developer support.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Titanium Security"
+          },
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "0.00",
+            "highPrice": "9.99",
+            "offerCount": "2",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Free Tier",
+                "price": "0.00",
+                "priceCurrency": "USD",
+                "url": "https://titaniumsecurity.dpdns.org/premium"
+              },
+              {
+                "@type": "Offer",
+                "name": "Premium Tier",
+                "price": "9.99",
+                "priceCurrency": "USD",
+                "url": "https://titaniumsecurity.dpdns.org/premium"
+              }
+            ]
+          }
+        })
+      }
+    ]
   }),
   component: PremiumPage,
 });
@@ -91,9 +131,8 @@ function PremiumPage() {
         {tiers.map((t) => (
           <div
             key={t.name}
-            className={`glass relative rounded-3xl p-8 flex flex-col justify-between ${
-              t.highlight ? "ring-2 ring-brand/60 bg-surface/20" : "bg-surface/10"
-            }`}
+            className={`glass relative rounded-3xl p-8 flex flex-col justify-between ${t.highlight ? "ring-2 ring-brand/60 bg-surface/20" : "bg-surface/10"
+              }`}
           >
             {t.highlight && (
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-brand to-brand-glow px-4 py-1 font-mono text-[9px] font-bold uppercase tracking-widest text-white flex items-center gap-1 shadow-lg">
@@ -107,7 +146,7 @@ function PremiumPage() {
                 {t.price !== "Custom" && <span className="text-sm font-normal text-muted-foreground ml-1">/mo</span>}
               </div>
               <p className="mt-3 text-xs text-muted-foreground leading-relaxed">{t.desc}</p>
-              
+
               <ul className="mt-8 space-y-3.5 text-xs text-muted-foreground border-t border-border/40 pt-6">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
@@ -117,16 +156,15 @@ function PremiumPage() {
                 ))}
               </ul>
             </div>
-            
+
             <a
               href="https://discord.gg/UXKWfgWgth"
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-10 block w-full rounded-xl py-3 text-center text-xs font-semibold transition-transform hover:scale-[1.02] ${
-                t.highlight
+              className={`mt-10 block w-full rounded-xl py-3 text-center text-xs font-semibold transition-transform hover:scale-[1.02] ${t.highlight
                   ? "bg-gradient-to-r from-brand to-brand-glow text-white shadow-lg shadow-brand/30"
                   : "glass-subtle hover:bg-white/10"
-              }`}
+                }`}
             >
               {t.cta}
             </a>
@@ -140,7 +178,7 @@ function PremiumPage() {
           <h2 className="font-display text-2xl font-bold">Compare details</h2>
           <p className="text-xs text-muted-foreground mt-1">A granular look at the feature sets of each protection class.</p>
         </div>
-        
+
         <div className="glass overflow-hidden rounded-2xl border border-border/60">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">

@@ -5,13 +5,24 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute("/partners")({
   head: () => ({
     meta: [
-      { title: "Partners — Titanium Security" },
-      { name: "description", content: "Agencies, integrators, and creator collectives building on Titanium Security. Refer, resell, or build on the platform." },
-      { property: "og:title", content: "Partners — Titanium Security" },
+      { title: "Partner Program — Titanium Security" },
+      { name: "description", content: "Join the Titanium Security partner network. Refer, resell, or integrate our Discord protection systems with your agency or creator collectives." },
+      { property: "og:title", content: "Partner Program — Titanium Security" },
       { property: "og:description", content: "Refer, resell, or build on Titanium Security — partnership tiers, benefits, and the application path." },
-      { property: "og:url", content: "/partners" },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/partners" },
     ],
-    links: [{ rel: "canonical", href: "/partners" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/partners" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Partner Program",
+          "description": "Information on referral commissions, implementation partnerships, and API integrations for agencies and creators."
+        })
+      }
+    ]
   }),
   component: PartnersPage,
 });
@@ -27,7 +38,7 @@ const tiers = [
     n: "Implementation",
     p: "Listed in directory",
     d: "For agencies who configure and operate Titanium Security on behalf of large guilds.",
-    perks: ["Multi-guild dashboard", "Priority engineering review", "Joint case studies"],
+    perks: ["Multi-server console configurations", "Priority engineering review", "Joint case studies"],
     featured: true,
   },
   {

@@ -18,6 +18,31 @@ async function getServerEntry(): Promise<ServerEntry> {
   return serverEntryPromise;
 }
 
+function injectSecurityHeaders(response: Response): Response {
+  const headers = new Headers(response.headers);
+
+  // Set security headers
+  headers.set(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https://*; connect-src 'self' https://discord.com https://discord.gg https://api.github.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self';"
+  );
+  headers.set("X-Frame-Options", "DENY");
+  headers.set("X-Content-Type-Options", "nosniff");
+  headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  headers.set("Permissions-Policy", "geolocation=(), microphone=(), camera=()");
+  headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+  headers.set("Cross-Origin-Opener-Policy", "same-origin");
+  headers.set("Cross-Origin-Resource-Policy", "same-origin");
+
+  const hasBody = response.body !== null && ![204, 205, 304].includes(response.status);
+
+  return new Response(hasBody ? response.body : null, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: headers,
+  });
+}
+
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
 async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
@@ -42,13 +67,15 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return injectSecurityHeaders(normalized);
     } catch (error) {
       console.error(error);
-      return new Response(renderErrorPage(), {
+      const errorResponse = new Response(renderErrorPage(), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },
       });
+      return injectSecurityHeaders(errorResponse);
     }
   },
 };

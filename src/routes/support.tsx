@@ -7,22 +7,38 @@ import { useState } from "react";
 export const Route = createFileRoute("/support")({
   head: () => ({
     meta: [
-      { title: "Support — Titanium Security" },
-      { name: "description", content: "Get support for Titanium Security bot setup, permissions, and features." },
-      { property: "og:title", content: "Support — Titanium Security" },
-      { property: "og:url", content: "/support" },
+      { title: "Support Hub — Titanium Security Discord Bot" },
+      { name: "description", content: "Get technical support for Titanium Security bot configuration, permissions, and features. Search our knowledge base or join the support server." },
+      { property: "og:title", content: "Support Hub — Titanium Security Discord Bot" },
+      { property: "og:description", content: "Get setup help, view documentation, or join our community server for priority developer assistance." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/support" },
     ],
-    links: [{ rel: "canonical", href: "/support" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/support" }],
     scripts: [{
       type: "application/ld+json",
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        mainEntity: [
-          { "@type": "Question", name: "Is Titanium Security free?", acceptedAnswer: { "@type": "Answer", text: "Yes — core protection is free for up to 3 servers." } },
-          { "@type": "Question", name: "How do I add Titanium Security?", acceptedAnswer: { "@type": "Answer", text: "Click Invite Bot on the header, sign in with Discord, and authorise on your server." } },
+        "mainEntity": [
+          { "@type": "Question", "name": "Is Titanium Security free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — core protection is free for up to 3 servers." } },
+          { "@type": "Question", "name": "How do I add Titanium Security?", "acceptedAnswer": { "@type": "Answer", "text": "Click Invite Bot on the header, sign in with Discord, and authorise on your server." } },
         ],
       }),
+    }, {
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Titanium Security Contact & Help Support Hub",
+        "description": "Technical support resources and direct lines for help.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "technical support",
+          "email": "thegreatlordvicky185@gmail.com",
+          "url": "https://discord.gg/UXKWfgWgth",
+          "availableLanguage": "en"
+        }
+      })
     }],
   }),
   component: SupportPage,
@@ -71,7 +87,7 @@ function SupportPage() {
               <p className="text-sm text-muted-foreground">{c.d}</p>
             </>
           );
-          
+
           if (isExternal) {
             return (
               <a
@@ -85,7 +101,7 @@ function SupportPage() {
               </a>
             );
           }
-          
+
           return (
             <Link
               key={c.t}

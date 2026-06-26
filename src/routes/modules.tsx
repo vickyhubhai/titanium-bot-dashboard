@@ -8,12 +8,35 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/modules")({
   head: () => ({
     meta: [
-      { title: "Modules — Titanium Security" },
-      { name: "description", content: "Explore the deep capabilities of Titanium Security. Anti Nuke, Intelligent Automod, Verification, Tickets and Logging." },
-      { property: "og:title", content: "Modules — Titanium Security" },
-      { property: "og:url", content: "/modules" },
+      { title: "Modules Showcase — Titanium Security Discord Bot" },
+      { name: "description", content: "Explore the core engine capabilities of Titanium Security. Learn how Antinuke, Automod, Verification, Tickets and Logging operate under extreme server conditions." },
+      { property: "og:title", content: "Modules Showcase — Titanium Security Discord Bot" },
+      { property: "og:description", content: "Deep dive into Titanium's security architecture: Antinuke, zero-latency Automod, CAPTCHA gates, HTML ticket logs, and append-only audits." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/modules" },
     ],
-    links: [{ rel: "canonical", href: "/modules" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/modules" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Titanium Security Bot Modules",
+          "image": "https://titaniumsecurity.dpdns.org/og-image.png",
+          "description": "Antinuke protection, automod, ticketing, custom role configuration, and verification tools for Discord.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Titanium Security"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        })
+      }
+    ]
   }),
   component: ModulesPage,
 });
@@ -182,7 +205,7 @@ function ModulesPage() {
   return (
     <SiteShell>
       <PageHeader eyebrow="Modules" title="Inside the core engine." sub="Independently configurable, highly optimized modules to run your community secure and clean." />
-      
+
       <section className="mx-auto max-w-6xl px-6 pb-28">
         <div className="grid gap-8 lg:grid-cols-[250px_1fr]">
           {/* Vertical Tabs Sidebar */}
@@ -193,11 +216,10 @@ function ModulesPage() {
                 <button
                   key={m.id}
                   onClick={() => setActiveTab(m.id)}
-                  className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm font-medium transition-all ${
-                    activeTab === m.id
+                  className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm font-medium transition-all ${activeTab === m.id
                       ? "bg-brand text-white shadow-lg shadow-brand/20"
                       : "glass hover:bg-white/[0.06] text-muted-foreground hover:text-foreground"
-                  }`}
+                    }`}
                 >
                   <Icon className="size-4 shrink-0" />
                   <span className="flex-1">{m.name}</span>

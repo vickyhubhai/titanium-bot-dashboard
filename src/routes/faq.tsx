@@ -8,12 +8,30 @@ import { motion, AnimatePresence } from "framer-motion";
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ — Titanium Security" },
-      { name: "description", content: "Frequently asked questions about Titanium Security bot setups, limits, whitelists and billing." },
-      { property: "og:title", content: "FAQ — Titanium Security" },
-      { property: "og:url", content: "/faq" },
+      { title: "Frequently Asked Questions — Titanium Security Discord Bot" },
+      { name: "description", content: "Got questions? Get answers about Titanium Security's anti-nuke mechanisms, proxy verification gates, custom branding, pricing, and latency specs." },
+      { property: "og:title", content: "Frequently Asked Questions — Titanium Security Discord Bot" },
+      { property: "og:description", content: "Everything you need to know about Titanium Security features, billing, whitelists, and installation." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/faq" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map((f) => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": f.a
+            }
+          }))
+        })
+      }
+    ]
   }),
   component: FAQPage,
 });
@@ -68,7 +86,7 @@ function FAQAccordionItem({ item, idx }: { item: FAQItem; idx: number }) {
           {open ? <Minus className="size-3.5" /> : <Plus className="size-3.5" />}
         </span>
       </button>
-      
+
       <AnimatePresence initial={false}>
         {open && (
           <motion.div
@@ -91,7 +109,7 @@ function FAQPage() {
   return (
     <SiteShell>
       <PageHeader eyebrow="FAQ" title="Frequently asked questions." sub="Everything you need to know about Titanium Security features, billing, and server whitelisting." />
-      
+
       <section className="mx-auto max-w-3xl space-y-4 px-6 pb-28">
         {faqs.map((faq, idx) => (
           <FAQAccordionItem key={idx} item={faq} idx={idx} />

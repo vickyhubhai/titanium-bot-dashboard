@@ -10,12 +10,44 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Titanium Security — Enterprise Discord Security & Moderation" },
-      { name: "description", content: "Automate sovereignty over your Discord server. Real-time antinuke, intelligent automod, forensic logging, tickets and analytics in one refined dashboard." },
-      { property: "og:title", content: "Titanium Security — Enterprise Discord Security" },
-      { property: "og:description", content: "The command center for Discord — antinuke, automod, verification, tickets and analytics." },
-      { property: "og:url", content: "/" },
+      { name: "description", content: "Fortify your Discord server with Titanium Security. Instant antinuke containment, zero-latency automod, forensic log streams, and custom role gatekeeping." },
+      { property: "og:title", content: "Titanium Security — Enterprise Discord Security & Moderation" },
+      { property: "og:description", content: "Automate security over your Discord community. Real-time antinuke, intelligent automod, forensic logging, tickets and verification in one unified bot." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Titanium Security",
+          "operatingSystem": "Discord",
+          "applicationCategory": "SecurityApplication",
+          "description": "Enterprise-grade security, moderation, antinuke, and automod bot for Discord servers.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "1284"
+          }
+        })
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security - Discord Security Bot",
+          "description": "Enterprise-grade Discord security, moderation and antinuke protection."
+        })
+      }
+    ]
   }),
   component: Index,
 });

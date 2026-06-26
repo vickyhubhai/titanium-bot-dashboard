@@ -5,12 +5,24 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute("/status")({
   head: () => ({
     meta: [
-      { title: "Status — Titanium Security" },
-      { name: "description", content: "Live operational status for every Titanium Security subsystem." },
-      { property: "og:title", content: "Status — Titanium Security" },
-      { property: "og:url", content: "/status" },
+      { title: "System Uptime & Live Status — Titanium Security" },
+      { name: "description", content: "Check the live operational status, response times, and historic uptime for Titanium Security bot instances, APIs, websites, and database clusters." },
+      { property: "og:title", content: "System Uptime & Live Status — Titanium Security" },
+      { property: "og:description", content: "Check the operational performance of Titanium Security Discord bot nodes and APIs in real-time." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/status" },
     ],
-    links: [{ rel: "canonical", href: "/status" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/status" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Subsystem Status",
+          "description": "Live uptime indicators for all Titanium Security Discord bot clusters, edge APIs, databases and networks."
+        })
+      }
+    ]
   }),
   component: StatusPage,
 });
@@ -59,7 +71,7 @@ function StatusPage() {
           </div>
         </div>
       </section>
-      
+
       <section className="mx-auto max-w-4xl space-y-4 px-6 pb-28">
         {systems.map((sys, idx) => {
           const b = bars(idx + 1);

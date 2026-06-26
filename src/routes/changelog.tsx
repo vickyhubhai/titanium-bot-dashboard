@@ -5,13 +5,24 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute("/changelog")({
   head: () => ({
     meta: [
-      { title: "Changelog — Titanium Security" },
-      { name: "description", content: "Every shipped change, ordered by date. Transparency is a feature." },
-      { property: "og:title", content: "Changelog — Titanium Security" },
+      { title: "Changelog & Release Notes — Titanium Security" },
+      { name: "description", content: "Check the changelog timeline for Titanium Security Discord bot. Review major updates, performance upgrades, bug fixes, and feature releases." },
+      { property: "og:title", content: "Changelog & Release Notes — Titanium Security" },
       { property: "og:description", content: "Every shipped change to Titanium Security, ordered by date — releases, fixes, and improvements with full transparency." },
-      { property: "og:url", content: "/changelog" },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/changelog" },
     ],
-    links: [{ rel: "canonical", href: "/changelog" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/changelog" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Changelog & Releases Timeline",
+          "description": "Comprehensive history of version releases, upgrades, security patches, and fixes for the Titanium Security platform."
+        })
+      }
+    ]
   }),
   component: ChangelogPage,
 });

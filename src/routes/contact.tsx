@@ -8,12 +8,45 @@ import { z } from "zod";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Titanium Security" },
-      { name: "description", content: "Talk to sales, ask for help, or report a security issue. We respond fast." },
-      { property: "og:title", content: "Contact — Titanium Security" },
-      { property: "og:url", content: "/contact" },
+      { title: "Contact Sales & Security Teams — Titanium Security" },
+      { name: "description", content: "Get in touch with Titanium Security. Reach out to our Sales, Support, or Security disclosure teams for help or queries." },
+      { property: "og:title", content: "Contact Sales & Security Teams — Titanium Security" },
+      { property: "og:description", content: "Submit general inquiries, enterprise sales requests, or responsible disclosure security reports." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Titanium Security Contact Page",
+          "description": "Direct communication channels for Titanium Security customer sales, technical help, and vulnerability disclosures.",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "thegreatlordvicky185@gmail.com",
+              "availableLanguage": "en"
+            },
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "thegreatlordvicky185@gmail.com",
+              "url": "https://discord.gg/UXKWfgWgth",
+              "availableLanguage": "en"
+            },
+            {
+              "@type": "ContactPoint",
+              "contactType": "security",
+              "email": "thegreatlordvicky185@gmail.com",
+              "availableLanguage": "en"
+            }
+          ]
+        })
+      }
+    ]
   }),
   component: ContactPage,
 });

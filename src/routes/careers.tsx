@@ -7,12 +7,27 @@ export const Route = createFileRoute("/careers")({
   head: () => ({
     meta: [
       { title: "Careers — Titanium Security" },
-      { name: "description", content: "Join a small, senior team building defensive infrastructure for the world's largest Discord communities." },
+      { name: "description", content: "Join a small, senior team building defensive infrastructure for the world's largest Discord communities. Review remote platform and security engineering roles." },
       { property: "og:title", content: "Careers — Titanium Security" },
       { property: "og:description", content: "Open roles at Titanium Security — remote-first, senior-only, and obsessed with the craft of community defence." },
-      { property: "og:url", content: "/careers" },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/careers" },
     ],
-    links: [{ rel: "canonical", href: "/careers" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/careers" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Careers at Titanium Security",
+          "description": "Join our remote-first team protecting Discord communities from security threats.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Titanium Security"
+          }
+        })
+      }
+    ]
   }),
   component: CareersPage,
 });

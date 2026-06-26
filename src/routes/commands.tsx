@@ -7,12 +7,31 @@ import { useMemo, useState } from "react";
 export const Route = createFileRoute("/commands")({
   head: () => ({
     meta: [
-      { title: "Commands — Titanium Security" },
-      { name: "description", content: "Every Titanium Security command, searchable. Slash commands, prefix commands and context menus." },
-      { property: "og:title", content: "Commands — Titanium Security" },
-      { property: "og:url", content: "/commands" },
+      { title: "Commands Index — Titanium Security Discord Bot" },
+      { name: "description", content: "Comprehensive, searchable directory of all Titanium Security Discord bot commands. Manage antinuke, automod, logging, verification, and tickets." },
+      { property: "og:title", content: "Commands Index — Titanium Security Discord Bot" },
+      { property: "og:description", content: "Searchable directory of all Titanium Security commands. Configure antinuke, automod, tickets, and logging directly from Discord." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/commands" },
     ],
-    links: [{ rel: "canonical", href: "/commands" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/commands" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Titanium Security Commands",
+          "operatingSystem": "Discord",
+          "applicationCategory": "SecurityApplication",
+          "description": "Full Slash command list for configuring Antinuke, Automod, Verification, Tickets and Logging on Discord servers.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD"
+          }
+        })
+      }
+    ]
   }),
   component: CommandsPage,
 });
@@ -95,9 +114,8 @@ function CommandsPage() {
             <button
               key={c}
               onClick={() => setCat(c)}
-              className={`rounded-full px-4 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors ${
-                cat === c ? "bg-brand text-white" : "glass-subtle text-muted-foreground hover:text-foreground"
-              }`}
+              className={`rounded-full px-4 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors ${cat === c ? "bg-brand text-white" : "glass-subtle text-muted-foreground hover:text-foreground"
+                }`}
             >
               {c}
             </button>

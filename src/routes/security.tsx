@@ -6,24 +6,35 @@ import { Shield, Lock, Eye, KeyRound, FileLock2, Mail } from "lucide-react";
 export const Route = createFileRoute("/security")({
   head: () => ({
     meta: [
-      { title: "Security overview — Titanium Security" },
-      { name: "description", content: "How Titanium Security approaches access control, transport security, logging, and responsible disclosure." },
-      { property: "og:title", content: "Security overview — Titanium Security" },
-      { property: "og:description", content: "App-owner statements about the security controls Titanium Security exposes to operators." },
-      { property: "og:url", content: "/security" },
+      { title: "Security Controls & Responsible Disclosure — Titanium Security" },
+      { name: "description", content: "How Titanium Security approaches encryption, authentication, authorization, audit logging, and responsible vulnerability disclosure." },
+      { property: "og:title", content: "Security Controls — Titanium Security" },
+      { property: "og:description", content: "Statements about the security controls and data handling practices Titanium Security exposes to server operators." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/security" },
     ],
-    links: [{ rel: "canonical", href: "/security" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/security" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Controls Overview",
+          "description": "Vulnerability reporting procedures, encryption details, and privacy controls enforced by Titanium Security."
+        })
+      }
+    ]
   }),
   component: SecurityPage,
 });
 
 const controls = [
-  { i: Lock, t: "Transport", d: "All traffic between your browser and the Titanium Security dashboard is served over HTTPS. Discord API traffic is initiated over TLS by the bot runtime." },
-  { i: KeyRound, t: "Authentication", d: "Operators sign in with Discord OAuth. Titanium Security never sees a Discord password and only requests the scopes documented at install time." },
-  { i: Shield, t: "Authorisation", d: "Role-based access inside the dashboard mirrors your guild's Discord permissions. Server-scoped actions require server-scoped roles." },
-  { i: Eye, t: "Audit logging", d: "Every operator action — module toggles, rule edits, role assignments — is written to an append-only audit log accessible from the dashboard." },
-  { i: FileLock2, t: "Data handling", d: "We store the minimum data needed to run the modules you enable: guild IDs, configuration, and operational logs. We do not train models on guild content." },
-  { i: Mail, t: "Disclosure", d: "Suspected vulnerabilities can be reported to security@Titanium Security.example. We acknowledge reports within two business days." },
+  { i: Lock, t: "Transport", d: "All traffic between your browser and the Titanium Security website is served over HTTPS. Discord API traffic is initiated over TLS by the bot runtime." },
+  { i: KeyRound, t: "Authentication", d: "Commands are authenticated natively inside Discord using Slash commands. Titanium Security never requests or sees Discord passwords." },
+  { i: Shield, t: "Authorisation", d: "Role-based permission validations mirror your guild's Discord configuration. Destructive actions require appropriate administrator roles." },
+  { i: Eye, t: "Audit logging", d: "Every admin action — configuration edits, whitelists, rulesets — is written to a designated, append-only logs channel in your server." },
+  { i: FileLock2, t: "Data handling", d: "We store only configurations needed to run active modules: guild IDs, whitelist roles, and temporary buffers. We never store message content databases." },
+  { i: Mail, t: "Disclosure", d: "Suspected security issues can be reported to security@titanium.security or directly to development. We respond within two business days." },
 ];
 
 function SecurityPage() {
@@ -32,7 +43,7 @@ function SecurityPage() {
       <PageHeader
         eyebrow="Security"
         title="How Titanium Security protects its operators and their communities."
-        sub="This page is maintained by the Titanium Security team and describes the security controls exposed to operators today. It is not a certification or an independent audit."
+        sub="This page is maintained by the Titanium Security team and describes the security controls exposed to operators today."
       />
       <section className="mx-auto grid max-w-5xl gap-5 px-6 pb-16 md:grid-cols-2">
         {controls.map((c) => (
@@ -59,7 +70,7 @@ function SecurityPage() {
           <h3 className="mb-2 mt-6 font-display text-base font-bold">Responsible disclosure</h3>
           <p className="text-sm text-muted-foreground">
             If you believe you have found a vulnerability, please email{" "}
-            <a className="text-brand hover:underline" href="mailto:security@Titanium Security.example">security@Titanium Security.example</a>{" "}
+            <a className="text-brand hover:underline" href="mailto:thegreatlordvicky185@gmail.com">thegreatlordvicky185@gmail.com</a>{" "}
             with reproduction steps. Do not test against guilds you do not control.
           </p>
         </div>

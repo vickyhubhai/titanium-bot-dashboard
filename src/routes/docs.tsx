@@ -7,12 +7,54 @@ import { useState } from "react";
 export const Route = createFileRoute("/docs")({
   head: () => ({
     meta: [
-      { title: "Documentation — Titanium Security" },
-      { name: "description", content: "Guides, command reference and setups for the Titanium Security Discord platform." },
-      { property: "og:title", content: "Documentation — Titanium Security" },
-      { property: "og:url", content: "/docs" },
+      { title: "Documentation & Onboarding Guides — Titanium Security" },
+      { name: "description", content: "Detailed setup tutorials, permission settings, slash command syntaxes, and troubleshooting guides for the Titanium Security bot." },
+      { property: "og:title", content: "Documentation & Onboarding Guides — Titanium Security" },
+      { property: "og:description", content: "Full configuration guides, permissions hierarchies, commands lists, and setup tutorials for Titanium Security." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/docs" },
     ],
-    links: [{ rel: "canonical", href: "/docs" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/docs" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How to set up Titanium Security Bot",
+          "description": "Step-by-step guide to installing and configuring the Titanium Security bot for Discord.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Invite the Bot",
+              "text": "Click the Invite Bot button to add the Titanium bot to your Discord server.",
+              "url": "https://titaniumsecurity.dpdns.org/docs#getting-started"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Correct Role Position",
+              "text": "Drag the Titanium Security bot role to the very top of your server's role list in Server Settings.",
+              "url": "https://titaniumsecurity.dpdns.org/docs#permissions"
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Configure Logging and Antinuke",
+              "text": "Run /setup inside a chat channel to link logging channels and activate automod filters.",
+              "url": "https://titaniumsecurity.dpdns.org/docs#bot-setup"
+            }
+          ]
+        })
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          "headline": "Titanium Security Technical Documentation",
+          "description": "Comprehensive reference for Titanium Security bot commands, automation configurations, and anti-nuke triggers.",
+          "articleSection": "Documentation"
+        })
+      }
+    ]
   }),
   component: DocsPage,
 });

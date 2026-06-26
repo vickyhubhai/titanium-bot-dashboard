@@ -7,13 +7,36 @@ import { TechSpecs } from "@/components/site/TechSpecs";
 export const Route = createFileRoute("/features")({
   head: () => ({
     meta: [
-      { title: "Features — Titanium Security" },
-      { name: "description", content: "Antinuke, automod, tickets, verification, giveaways, analytics — explore every Titanium Security module." },
-      { property: "og:title", content: "Features — Titanium Security" },
-      { property: "og:description", content: "Explore every Titanium Security security and moderation module." },
-      { property: "og:url", content: "/features" },
+      { title: "Features — Titanium Security Discord Bot" },
+      { name: "description", content: "Antinuke protection, zero-latency automod, integrated ticket workflows, custom oauth verification and logs — explore Titanium Security capabilities." },
+      { property: "og:title", content: "Features — Titanium Security Discord Bot" },
+      { property: "og:description", content: "Antinuke, automod, tickets, verification, giveaways, analytics — explore every Titanium Security module." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/features" },
     ],
-    links: [{ rel: "canonical", href: "/features" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/features" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Titanium Security Bot Features",
+          "image": "https://titaniumsecurity.dpdns.org/og-image.png",
+          "description": "Antinuke protection, automod, ticketing, custom role configuration, and verification tools for Discord.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Titanium Security"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://titaniumsecurity.dpdns.org/features"
+          }
+        })
+      }
+    ]
   }),
   component: FeaturesPage,
 });

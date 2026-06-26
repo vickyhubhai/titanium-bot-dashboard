@@ -6,13 +6,24 @@ import { Check } from "lucide-react";
 export const Route = createFileRoute("/enterprise")({
   head: () => ({
     meta: [
-      { title: "Enterprise — Titanium Security" },
-      { name: "description", content: "Dedicated capacity, named support, and contractual SLAs for communities that cannot afford downtime." },
-      { property: "og:title", content: "Enterprise — Titanium Security" },
+      { title: "Enterprise Discord Protection — Titanium Security" },
+      { name: "description", content: "Dedicated capacity, custom shard logic, named support, and contractual 99.99% operational SLAs for high-concurrency enterprise Discord communities." },
+      { property: "og:title", content: "Enterprise Discord Protection — Titanium Security" },
       { property: "og:description", content: "Dedicated capacity, named support, and contractual SLAs for the world's largest Discord communities." },
-      { property: "og:url", content: "/enterprise" },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/enterprise" },
     ],
-    links: [{ rel: "canonical", href: "/enterprise" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/enterprise" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Enterprise Bot Protection",
+          "description": "SLA-backed dedicated shards and incident handling hotlines for high-volume corporate Discord networks."
+        })
+      }
+    ]
   }),
   component: EnterprisePage,
 });

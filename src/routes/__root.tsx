@@ -81,20 +81,44 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no" },
       { name: "theme-color", content: "#0a0a14" },
       { title: "Titanium Security — Discord Security & Moderation Bot" },
       { name: "description", content: "Fortify your Discord server with Titanium Security. Instant antinuke containment, zero-latency automod, forensic log streams, and custom role gatekeeping." },
       { name: "author", content: "Titanium Security" },
+      // OpenGraph
       { property: "og:title", content: "Titanium Security — Discord Security & Moderation Bot" },
       { property: "og:description", content: "Fortify your Discord server with Titanium Security. Instant antinuke containment, zero-latency automod, forensic log streams, and custom role gatekeeping." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Titanium Security" },
+      { property: "og:image", content: "/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      // Twitter
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Titanium Security — Discord Security & Moderation" },
+      { name: "twitter:description", content: "Fortify your Discord server with Titanium Security. Instant antinuke containment, zero-latency automod, forensic log streams, and custom role gatekeeping." },
+      { name: "twitter:image", content: "/og-image.png" },
+      // PWA & Apple Meta
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Titanium" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "application-name", content: "Titanium Security" },
+      { name: "msapplication-TileColor", content: "#0a0a14" },
+      { name: "msapplication-config", content: "/browserconfig.xml" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://fonts.googleapis.com" },
+      { rel: "dns-prefetch", href: "https://fonts.gstatic.com" },
+      { rel: "canonical", href: "https://astral-dashboard-73.lovable.app" },
+      { rel: "alternate", hrefLang: "en", href: "https://astral-dashboard-73.lovable.app" },
+      { rel: "alternate", hrefLang: "x-default", href: "https://astral-dashboard-73.lovable.app" },
+      { rel: "manifest", href: "/manifest.json" },
+      { rel: "apple-touch-icon", href: "/icon-192.png" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
@@ -112,7 +136,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "Titanium Security",
           url: "https://astral-dashboard-73.lovable.app",
-          description: "Enterprise-grade security, moderation and analytics platform for Discord servers.",
+          logo: "https://titaniumsecurity.dpdns.org/favicon.svg",
+          image: "https://titaniumsecurity.dpdns.org/og-image.png",
+          description: "Enterprise-grade security, moderation and antinuke platform for Discord servers.",
+          sameAs: [
+            "https://discord.gg/UXKWfgWgth",
+            "https://twitter.com/TitaniumSecurity"
+          ]
         }),
       },
     ],
@@ -130,6 +160,9 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body className="bg-background text-foreground antialiased">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-background focus:p-4 focus:text-brand focus:outline-none focus:ring-2 focus:ring-brand">
+          Skip to content
+        </a>
         {children}
         <Scripts />
       </body>
@@ -140,6 +173,21 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/sw.js").then(
+          (registration) => {
+            console.log("Service Worker registered successfully: ", registration.scope);
+          },
+          (err) => {
+            console.error("Service Worker registration failed: ", err);
+          }
+        );
+      });
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
@@ -147,3 +195,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+

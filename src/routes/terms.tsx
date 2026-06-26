@@ -6,11 +6,23 @@ export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
       { title: "Terms of Service — Titanium Security" },
-      { name: "description", content: "The terms that govern your use of Titanium Security." },
-      { property: "og:title", content: "Terms — Titanium Security" },
-      { property: "og:url", content: "/terms" },
+      { name: "description", content: "Terms of Service governing your use of Titanium Security Discord bot capabilities, subscriptions, billing terms, and legal agreements." },
+      { property: "og:title", content: "Terms of Service — Titanium Security" },
+      { property: "og:description", content: "Learn the acceptable use guidelines, billing terms, and legal details for Titanium Security." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/terms" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Terms of Service",
+          "description": "Rules, guidelines, and billing parameters governing usage of the Titanium Security Discord bot."
+        })
+      }
+    ]
   }),
   component: TermsPage,
 });

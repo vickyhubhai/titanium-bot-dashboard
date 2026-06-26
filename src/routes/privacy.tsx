@@ -6,11 +6,23 @@ export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy — Titanium Security" },
-      { name: "description", content: "How Titanium Security collects, uses and protects your data." },
-      { property: "og:title", content: "Privacy — Titanium Security" },
-      { property: "og:url", content: "/privacy" },
+      { name: "description", content: "Privacy policy describing how Titanium Security Discord bot collects, processes, and protects server configuration data and audit logs." },
+      { property: "og:title", content: "Privacy Policy — Titanium Security" },
+      { property: "og:description", content: "Understand how Titanium Security protects and processes server data and configurations." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/privacy" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/privacy" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Privacy Policy",
+          "description": "Details on user data collection, telemetry logs, and privacy protections for the Titanium Security platform."
+        })
+      }
+    ]
   }),
   component: PrivacyPage,
 });

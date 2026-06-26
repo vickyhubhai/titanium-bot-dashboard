@@ -6,13 +6,24 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/integrations")({
   head: () => ({
     meta: [
-      { title: "Integrations — Titanium Security" },
-      { name: "description", content: "Connect Titanium Security to the tools your team already runs — Discord, GitHub, Notion, Linear, PagerDuty, Datadog and more." },
-      { property: "og:title", content: "Integrations — Titanium Security" },
+      { title: "Integrations & API webhooks — Titanium Security" },
+      { name: "description", content: "Connect Titanium Security Discord bot to tools your ops team already runs — Slack, GitHub, Notion, Linear, PagerDuty, Datadog and Statuspage." },
+      { property: "og:title", content: "Integrations & API webhooks — Titanium Security" },
       { property: "og:description", content: "Stream events, sync rules, and route alerts across the tools your operations team already lives in." },
-      { property: "og:url", content: "/integrations" },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/integrations" },
     ],
-    links: [{ rel: "canonical", href: "/integrations" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/integrations" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Third-party Integrations",
+          "description": "Information on linking Slack, PagerDuty, Datadog and webhooks with Titanium Security bot logs."
+        })
+      }
+    ]
   }),
   component: IntegrationsPage,
 });
@@ -58,7 +69,7 @@ function IntegrationsPage() {
       <PageHeader
         eyebrow="Integrations"
         title="One platform, every surface your team already uses."
-        sub="Titanium Security speaks the protocols your stack already speaks. Stream events, sync rules, route alerts — without leaving the dashboard."
+        sub="Titanium Security speaks the protocols your stack already speaks. Stream events, sync rules, route alerts — without leaving Discord."
       />
       <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-28 md:grid-cols-2">
         {groups.map((g, gi) => (

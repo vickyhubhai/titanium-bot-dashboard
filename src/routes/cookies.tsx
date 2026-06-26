@@ -5,21 +5,31 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute("/cookies")({
   head: () => ({
     meta: [
-      { title: "Cookie policy — Titanium Security" },
-      { name: "description", content: "What Titanium Security stores in your browser, why, and how to opt out." },
-      { property: "og:title", content: "Cookie policy — Titanium Security" },
-      { property: "og:description", content: "Plain-language description of the cookies and local storage Titanium Security uses." },
-      { property: "og:url", content: "/cookies" },
+      { title: "Cookie Policy — Titanium Security" },
+      { name: "description", content: "What Titanium Security stores in your browser, why, and how to manage caching and local storage." },
+      { property: "og:title", content: "Cookie Policy — Titanium Security" },
+      { property: "og:description", content: "Plain-language description of the local cache and storage Titanium Security uses." },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/cookies" },
     ],
-    links: [{ rel: "canonical", href: "/cookies" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/cookies" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Titanium Security Cookie & Storage Policy",
+          "description": "Information on the browser storage mechanisms and offline service worker caches used by Titanium Security."
+        })
+      }
+    ]
   }),
   component: CookiesPage,
 });
 
 const rows = [
-  { n: "Titanium Security_session", purpose: "Keeps you signed in to the dashboard between visits.", retention: "30 days", optional: false },
-  { n: "Titanium Security_theme", purpose: "Remembers your theme preference (system / dark / light).", retention: "1 year", optional: true },
-  { n: "Titanium Security_prefs", purpose: "Stores dashboard layout choices such as collapsed sidebars.", retention: "1 year", optional: true },
+  { n: "titanium-cache-v1", purpose: "Service Worker cache storing static app shell, icons and font styles for offline operation.", retention: "Until cleared", optional: false },
+  { n: "titanium_theme", purpose: "Local storage option remembering your visual theme preferences (e.g. Dark Mode).", retention: "Persistent", optional: true }
 ];
 
 function CookiesPage() {
@@ -28,7 +38,7 @@ function CookiesPage() {
       <PageHeader
         eyebrow="Cookies"
         title="What Titanium Security stores in your browser."
-        sub="This page is maintained by the Titanium Security team and lists only the cookies and local-storage entries written by the dashboard today."
+        sub="This page is maintained by the Titanium Security team and lists local storage and service worker cache buckets used by the website today."
       />
       <section className="mx-auto max-w-4xl px-6 pb-28">
         <div className="glass overflow-hidden rounded-2xl">
@@ -49,9 +59,8 @@ function CookiesPage() {
                   <td className="px-5 py-4">{r.retention}</td>
                   <td className="px-5 py-4">
                     <span
-                      className={`rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest ${
-                        r.optional ? "bg-brand/15 text-brand" : "bg-surface text-muted-foreground"
-                      }`}
+                      className={`rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest ${r.optional ? "bg-brand/15 text-brand" : "bg-surface text-muted-foreground"
+                        }`}
                     >
                       {r.optional ? "Optional" : "Required"}
                     </span>
@@ -62,8 +71,7 @@ function CookiesPage() {
           </table>
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
-          Optional entries can be cleared at any time from your browser's site-data panel. Clearing the required session entry
-          will sign you out of the dashboard.
+          Required cache items are necessary to support offline PWA reliability. Optional local storage entries can be cleared at any time from your browser's site settings dashboard.
         </p>
       </section>
     </SiteShell>

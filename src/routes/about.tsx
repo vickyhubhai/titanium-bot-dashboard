@@ -19,7 +19,7 @@ export const Route = createFileRoute("/about")({
         "@context": "https://schema.org",
         "@type": "AboutPage",
         name: "About Titanium Security",
-        url: "https://astral-dashboard-73.lovable.app/about",
+        url: "https://titaniumsecurity.dpdns.org/about",
         description: "The story, principles, and team behind Titanium Security — a small team obsessed with digital safety.",
         mainEntity: {
           "@type": "Organization",
