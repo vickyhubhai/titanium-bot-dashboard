@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+
 const GA_MEASUREMENT_ID = "G-61LXYKCHXT";
 
 function NotFoundComponent() {
