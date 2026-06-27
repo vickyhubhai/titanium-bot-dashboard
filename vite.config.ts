@@ -15,4 +15,31 @@ export default defineConfig({
   nitro: {
     preset: "vercel",
   },
+  vite: {
+    build: {
+      target: "esnext",
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              if (id.includes("framer-motion")) {
+                return "framer-motion";
+              }
+              if (id.includes("lucide-react")) {
+                return "lucide";
+              }
+              if (id.includes("@tanstack")) {
+                return "tanstack";
+              }
+              if (id.includes("zod")) {
+                return "zod";
+              }
+              return "vendor";
+            }
+          },
+        },
+      },
+    },
+  },
 });
