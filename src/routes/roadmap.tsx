@@ -2,30 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHeader } from "@/components/site/PageHeader";
 
-export const Route = createFileRoute("/roadmap")({
+export const Route = createFileRoute('/roadmap')({
   head: () => ({
     meta: [
-      { title: "Public Product Roadmap — Titanium Security" },
-      { name: "description", content: "Stay updated on the future of Discord security. Review what Titanium Security is shipping now, what's coming up next, and our long-term roadmap." },
-      { property: "og:title", content: "Public Product Roadmap — Titanium Security" },
-      { property: "og:description", content: "Now, next, and later — the public Titanium Security product roadmap refreshed every quarter." },
-      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/roadmap" },
+      { title: "Roadmap — Sentinel" },
+      { name: "description", content: "What we are building next. The Sentinel public roadmap, refreshed every quarter." },
+      { property: "og:title", content: "Roadmap — Sentinel" },
+      { property: "og:description", content: "Now, next, and later — the public Sentinel roadmap refreshed every quarter." },
+      { property: "og:url", content: "/roadmap" },
     ],
-    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/roadmap" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Titanium Security Public Roadmap",
-          "description": "Information on the development progress, active feature builds, and future releases of Titanium Security Discord bot modules."
-        })
-      }
-    ]
+    links: [{ rel: "canonical", href: "/roadmap" }],
   }),
-  component: RoadmapPage,
-});
+  });
 
 const columns = [
   {
@@ -57,30 +45,3 @@ const columns = [
   },
 ];
 
-function RoadmapPage() {
-  return (
-    <SiteShell>
-      <PageHeader
-        eyebrow="Roadmap"
-        title="Where Titanium Security is going next."
-        sub="We share a public roadmap because predictability is a feature. Dates are intentionally omitted — outcomes are not."
-      />
-      <section className="mx-auto grid max-w-6xl gap-5 px-6 pb-28 md:grid-cols-3">
-        {columns.map((c) => (
-          <div key={c.h} className="glass rounded-2xl p-6">
-            <div className={`mb-4 inline-block rounded-full bg-gradient-to-r ${c.tone} px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-brand-foreground`}>
-              {c.h}
-            </div>
-            <ul className="space-y-3">
-              {c.items.map((i) => (
-                <li key={i} className="rounded-xl border border-border/60 bg-surface/40 p-3 text-sm text-foreground/90">
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </section>
-    </SiteShell>
-  );
-}

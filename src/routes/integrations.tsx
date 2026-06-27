@@ -3,30 +3,18 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { PageHeader } from "@/components/site/PageHeader";
 import { motion } from "framer-motion";
 
-export const Route = createFileRoute("/integrations")({
+export const Route = createFileRoute('/integrations')({
   head: () => ({
     meta: [
-      { title: "Integrations & API webhooks — Titanium Security" },
-      { name: "description", content: "Connect Titanium Security Discord bot to tools your ops team already runs — Slack, GitHub, Notion, Linear, PagerDuty, Datadog and Statuspage." },
-      { property: "og:title", content: "Integrations & API webhooks — Titanium Security" },
+      { title: "Integrations — Sentinel" },
+      { name: "description", content: "Connect Sentinel to the tools your team already runs — Discord, GitHub, Notion, Linear, PagerDuty, Datadog and more." },
+      { property: "og:title", content: "Integrations — Sentinel" },
       { property: "og:description", content: "Stream events, sync rules, and route alerts across the tools your operations team already lives in." },
-      { property: "og:url", content: "https://titaniumsecurity.dpdns.org/integrations" },
+      { property: "og:url", content: "/integrations" },
     ],
-    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/integrations" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Titanium Security Third-party Integrations",
-          "description": "Information on linking Slack, PagerDuty, Datadog and webhooks with Titanium Security bot logs."
-        })
-      }
-    ]
+    links: [{ rel: "canonical", href: "/integrations" }],
   }),
-  component: IntegrationsPage,
-});
+  });
 
 const groups = [
   {
@@ -63,46 +51,3 @@ const groups = [
   },
 ];
 
-function IntegrationsPage() {
-  return (
-    <SiteShell>
-      <PageHeader
-        eyebrow="Integrations"
-        title="One platform, every surface your team already uses."
-        sub="Titanium Security speaks the protocols your stack already speaks. Stream events, sync rules, route alerts — without leaving Discord."
-      />
-      <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-28 md:grid-cols-2">
-        {groups.map((g, gi) => (
-          <motion.div
-            key={g.title}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.5, delay: gi * 0.05 }}
-            className="glass rounded-2xl p-6"
-          >
-            <div className="mb-5 flex items-center justify-between">
-              <h2 className="font-display text-xl font-bold">{g.title}</h2>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                {g.items.length} apps
-              </span>
-            </div>
-            <ul className="divide-y divide-border/60">
-              {g.items.map((i) => (
-                <li key={i.n} className="flex items-start gap-4 py-3">
-                  <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand/30 via-brand-glow/20 to-transparent font-display text-sm font-bold">
-                    {i.n.slice(0, 1)}
-                  </div>
-                  <div className="min-w-0">
-                    <div className="font-medium">{i.n}</div>
-                    <p className="text-sm text-muted-foreground">{i.d}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </section>
-    </SiteShell>
-  );
-}

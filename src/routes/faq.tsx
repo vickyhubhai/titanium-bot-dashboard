@@ -5,7 +5,7 @@ import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Route = createFileRoute("/faq")({
+export const Route = createFileRoute('/faq')({
   head: () => ({
     meta: [
       { title: "Frequently Asked Questions — Titanium Security Discord Bot" },
@@ -33,8 +33,7 @@ export const Route = createFileRoute("/faq")({
       }
     ]
   }),
-  component: FAQPage,
-});
+  });
 
 interface FAQItem {
   q: string;
@@ -52,11 +51,11 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Can I whitelist specific administrators from triggering punishments?",
-    a: "Yes. Use the `/antinuke whitelist @user` command to add trusted administrators. Whitelisted users can create channels, update roles, and manage members without triggering safety containment alerts."
+    a: "Yes. Use the \`/antinuke whitelist @user\` command to add trusted administrators. Whitelisted users can create channels, update roles, and manage members without triggering safety containment alerts."
   },
   {
     q: "How do I set up the verification gate?",
-    a: "Run the `/verification setup` command. Titanium will create a secured verification channel, configure permissions so unverified members cannot see other channels, and post a button panel. Joining members must solve an image CAPTCHA or confirm OAuth before they talk."
+    a: "Run the \`/verification setup\` command. Titanium will create a secured verification channel, configure permissions so unverified members cannot see other channels, and post a button panel. Joining members must solve an image CAPTCHA or confirm OAuth before they talk."
   },
   {
     q: "Do you support custom bot profile branding (custom avatars and names)?",
@@ -105,16 +104,3 @@ function FAQAccordionItem({ item, idx }: { item: FAQItem; idx: number }) {
   );
 }
 
-function FAQPage() {
-  return (
-    <SiteShell>
-      <PageHeader eyebrow="FAQ" title="Frequently asked questions." sub="Everything you need to know about Titanium Security features, billing, and server whitelisting." />
-
-      <section className="mx-auto max-w-3xl space-y-4 px-6 pb-28">
-        {faqs.map((faq, idx) => (
-          <FAQAccordionItem key={idx} item={faq} idx={idx} />
-        ))}
-      </section>
-    </SiteShell>
-  );
-}

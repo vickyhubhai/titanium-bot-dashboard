@@ -16,14 +16,17 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SecurityRouteImport } from './routes/security'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PremiumRouteImport } from './routes/premium'
 import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ModulesRouteImport } from './routes/modules'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as IntegrationsRouteImport } from './routes/integrations'
 import { Route as FeaturesRouteImport } from './routes/features'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as DocsRouteImport } from './routes/docs'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommandsRouteImport } from './routes/commands'
@@ -32,24 +35,34 @@ import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard.index'
 import { Route as VsWickRouteImport } from './routes/vs.wick'
+import { Route as DashboardSettingsRouteImport } from './routes/dashboard.settings'
+import { Route as DashboardServersRouteImport } from './routes/dashboard.servers'
+import { Route as DashboardPremiumRouteImport } from './routes/dashboard.premium'
+import { Route as DashboardNotificationsRouteImport } from './routes/dashboard.notifications'
+import { Route as DashboardModulesRouteImport } from './routes/dashboard.modules'
+import { Route as DashboardLogsRouteImport } from './routes/dashboard.logs'
+import { Route as DashboardAuditRouteImport } from './routes/dashboard.audit'
+import { Route as DashboardAnalyticsRouteImport } from './routes/dashboard.analytics'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as DashboardServersServerIdRouteImport } from './routes/dashboard.servers.$serverId'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/terms.lazy').then((d) => d.Route))
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/support.lazy').then((d) => d.Route))
 const StatusRoute = StatusRouteImport.update({
   id: '/status',
   path: '/status',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/status.lazy').then((d) => d.Route))
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -59,107 +72,193 @@ const SecurityRoute = SecurityRouteImport.update({
   id: '/security',
   path: '/security',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/security.lazy').then((d) => d.Route))
 const RoadmapRoute = RoadmapRouteImport.update({
   id: '/roadmap',
   path: '/roadmap',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/roadmap.lazy').then((d) => d.Route))
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/privacy.lazy').then((d) => d.Route))
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() => import('./routes/pricing.lazy').then((d) => d.Route))
 const PremiumRoute = PremiumRouteImport.update({
   id: '/premium',
   path: '/premium',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/premium.lazy').then((d) => d.Route))
 const PartnersRoute = PartnersRouteImport.update({
   id: '/partners',
   path: '/partners',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/partners.lazy').then((d) => d.Route))
 const ModulesRoute = ModulesRouteImport.update({
   id: '/modules',
   path: '/modules',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/modules.lazy').then((d) => d.Route))
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() => import('./routes/login.lazy').then((d) => d.Route))
 const IntegrationsRoute = IntegrationsRouteImport.update({
   id: '/integrations',
   path: '/integrations',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/integrations.lazy').then((d) => d.Route))
 const FeaturesRoute = FeaturesRouteImport.update({
   id: '/features',
   path: '/features',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/features.lazy').then((d) => d.Route))
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/faq.lazy').then((d) => d.Route))
 const EnterpriseRoute = EnterpriseRouteImport.update({
   id: '/enterprise',
   path: '/enterprise',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/enterprise.lazy').then((d) => d.Route))
 const DocsRoute = DocsRouteImport.update({
   id: '/docs',
   path: '/docs',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/docs.lazy').then((d) => d.Route))
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() => import('./routes/dashboard.lazy').then((d) => d.Route))
 const CookiesRoute = CookiesRouteImport.update({
   id: '/cookies',
   path: '/cookies',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/cookies.lazy').then((d) => d.Route))
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/contact.lazy').then((d) => d.Route))
 const CommandsRoute = CommandsRouteImport.update({
   id: '/commands',
   path: '/commands',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/commands.lazy').then((d) => d.Route))
 const ChangelogRoute = ChangelogRouteImport.update({
   id: '/changelog',
   path: '/changelog',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/changelog.lazy').then((d) => d.Route))
 const CareersRoute = CareersRouteImport.update({
   id: '/careers',
   path: '/careers',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/careers.lazy').then((d) => d.Route))
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/blog.lazy').then((d) => d.Route))
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/about.lazy').then((d) => d.Route))
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.index.lazy').then((d) => d.Route),
+)
 const VsWickRoute = VsWickRouteImport.update({
   id: '/vs/wick',
   path: '/vs/wick',
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any).lazy(() => import('./routes/vs.wick.lazy').then((d) => d.Route))
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.settings.lazy').then((d) => d.Route),
+)
+const DashboardServersRoute = DashboardServersRouteImport.update({
+  id: '/servers',
+  path: '/servers',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.servers.lazy').then((d) => d.Route),
+)
+const DashboardPremiumRoute = DashboardPremiumRouteImport.update({
+  id: '/premium',
+  path: '/premium',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.premium.lazy').then((d) => d.Route),
+)
+const DashboardNotificationsRoute = DashboardNotificationsRouteImport.update({
+  id: '/notifications',
+  path: '/notifications',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.notifications.lazy').then((d) => d.Route),
+)
+const DashboardModulesRoute = DashboardModulesRouteImport.update({
+  id: '/modules',
+  path: '/modules',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.modules.lazy').then((d) => d.Route),
+)
+const DashboardLogsRoute = DashboardLogsRouteImport.update({
+  id: '/logs',
+  path: '/logs',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.logs.lazy').then((d) => d.Route),
+)
+const DashboardAuditRoute = DashboardAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.audit.lazy').then((d) => d.Route),
+)
+const DashboardAnalyticsRoute = DashboardAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => DashboardRoute,
+} as any).lazy(() =>
+  import('./routes/dashboard.analytics.lazy').then((d) => d.Route),
+)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => BlogRoute,
-} as any)
+} as any).lazy(() => import('./routes/blog.$slug.lazy').then((d) => d.Route))
+const DashboardServersServerIdRoute =
+  DashboardServersServerIdRouteImport.update({
+    id: '/$serverId',
+    path: '/$serverId',
+    getParentRoute: () => DashboardServersRoute,
+  } as any).lazy(() =>
+    import('./routes/dashboard.servers.$serverId.lazy').then((d) => d.Route),
+  )
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -170,14 +269,17 @@ export interface FileRoutesByFullPath {
   '/commands': typeof CommandsRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/docs': typeof DocsRoute
   '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/integrations': typeof IntegrationsRoute
+  '/login': typeof LoginRoute
   '/modules': typeof ModulesRoute
   '/partners': typeof PartnersRoute
   '/premium': typeof PremiumRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/roadmap': typeof RoadmapRoute
   '/security': typeof SecurityRoute
@@ -186,7 +288,17 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/dashboard/analytics': typeof DashboardAnalyticsRoute
+  '/dashboard/audit': typeof DashboardAuditRoute
+  '/dashboard/logs': typeof DashboardLogsRoute
+  '/dashboard/modules': typeof DashboardModulesRoute
+  '/dashboard/notifications': typeof DashboardNotificationsRoute
+  '/dashboard/premium': typeof DashboardPremiumRoute
+  '/dashboard/servers': typeof DashboardServersRouteWithChildren
+  '/dashboard/settings': typeof DashboardSettingsRoute
   '/vs/wick': typeof VsWickRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/servers/$serverId': typeof DashboardServersServerIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -202,9 +314,11 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/integrations': typeof IntegrationsRoute
+  '/login': typeof LoginRoute
   '/modules': typeof ModulesRoute
   '/partners': typeof PartnersRoute
   '/premium': typeof PremiumRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/roadmap': typeof RoadmapRoute
   '/security': typeof SecurityRoute
@@ -213,7 +327,17 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/dashboard/analytics': typeof DashboardAnalyticsRoute
+  '/dashboard/audit': typeof DashboardAuditRoute
+  '/dashboard/logs': typeof DashboardLogsRoute
+  '/dashboard/modules': typeof DashboardModulesRoute
+  '/dashboard/notifications': typeof DashboardNotificationsRoute
+  '/dashboard/premium': typeof DashboardPremiumRoute
+  '/dashboard/servers': typeof DashboardServersRouteWithChildren
+  '/dashboard/settings': typeof DashboardSettingsRoute
   '/vs/wick': typeof VsWickRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/servers/$serverId': typeof DashboardServersServerIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -225,14 +349,17 @@ export interface FileRoutesById {
   '/commands': typeof CommandsRoute
   '/contact': typeof ContactRoute
   '/cookies': typeof CookiesRoute
+  '/dashboard': typeof DashboardRouteWithChildren
   '/docs': typeof DocsRoute
   '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
   '/integrations': typeof IntegrationsRoute
+  '/login': typeof LoginRoute
   '/modules': typeof ModulesRoute
   '/partners': typeof PartnersRoute
   '/premium': typeof PremiumRoute
+  '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
   '/roadmap': typeof RoadmapRoute
   '/security': typeof SecurityRoute
@@ -241,7 +368,17 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/dashboard/analytics': typeof DashboardAnalyticsRoute
+  '/dashboard/audit': typeof DashboardAuditRoute
+  '/dashboard/logs': typeof DashboardLogsRoute
+  '/dashboard/modules': typeof DashboardModulesRoute
+  '/dashboard/notifications': typeof DashboardNotificationsRoute
+  '/dashboard/premium': typeof DashboardPremiumRoute
+  '/dashboard/servers': typeof DashboardServersRouteWithChildren
+  '/dashboard/settings': typeof DashboardSettingsRoute
   '/vs/wick': typeof VsWickRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/servers/$serverId': typeof DashboardServersServerIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -254,14 +391,17 @@ export interface FileRouteTypes {
     | '/commands'
     | '/contact'
     | '/cookies'
+    | '/dashboard'
     | '/docs'
     | '/enterprise'
     | '/faq'
     | '/features'
     | '/integrations'
+    | '/login'
     | '/modules'
     | '/partners'
     | '/premium'
+    | '/pricing'
     | '/privacy'
     | '/roadmap'
     | '/security'
@@ -270,7 +410,17 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/blog/$slug'
+    | '/dashboard/analytics'
+    | '/dashboard/audit'
+    | '/dashboard/logs'
+    | '/dashboard/modules'
+    | '/dashboard/notifications'
+    | '/dashboard/premium'
+    | '/dashboard/servers'
+    | '/dashboard/settings'
     | '/vs/wick'
+    | '/dashboard/'
+    | '/dashboard/servers/$serverId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -286,9 +436,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/features'
     | '/integrations'
+    | '/login'
     | '/modules'
     | '/partners'
     | '/premium'
+    | '/pricing'
     | '/privacy'
     | '/roadmap'
     | '/security'
@@ -297,7 +449,17 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/blog/$slug'
+    | '/dashboard/analytics'
+    | '/dashboard/audit'
+    | '/dashboard/logs'
+    | '/dashboard/modules'
+    | '/dashboard/notifications'
+    | '/dashboard/premium'
+    | '/dashboard/servers'
+    | '/dashboard/settings'
     | '/vs/wick'
+    | '/dashboard'
+    | '/dashboard/servers/$serverId'
   id:
     | '__root__'
     | '/'
@@ -308,14 +470,17 @@ export interface FileRouteTypes {
     | '/commands'
     | '/contact'
     | '/cookies'
+    | '/dashboard'
     | '/docs'
     | '/enterprise'
     | '/faq'
     | '/features'
     | '/integrations'
+    | '/login'
     | '/modules'
     | '/partners'
     | '/premium'
+    | '/pricing'
     | '/privacy'
     | '/roadmap'
     | '/security'
@@ -324,7 +489,17 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/blog/$slug'
+    | '/dashboard/analytics'
+    | '/dashboard/audit'
+    | '/dashboard/logs'
+    | '/dashboard/modules'
+    | '/dashboard/notifications'
+    | '/dashboard/premium'
+    | '/dashboard/servers'
+    | '/dashboard/settings'
     | '/vs/wick'
+    | '/dashboard/'
+    | '/dashboard/servers/$serverId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -336,14 +511,17 @@ export interface RootRouteChildren {
   CommandsRoute: typeof CommandsRoute
   ContactRoute: typeof ContactRoute
   CookiesRoute: typeof CookiesRoute
+  DashboardRoute: typeof DashboardRouteWithChildren
   DocsRoute: typeof DocsRoute
   EnterpriseRoute: typeof EnterpriseRoute
   FaqRoute: typeof FaqRoute
   FeaturesRoute: typeof FeaturesRoute
   IntegrationsRoute: typeof IntegrationsRoute
+  LoginRoute: typeof LoginRoute
   ModulesRoute: typeof ModulesRoute
   PartnersRoute: typeof PartnersRoute
   PremiumRoute: typeof PremiumRoute
+  PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
   RoadmapRoute: typeof RoadmapRoute
   SecurityRoute: typeof SecurityRoute
@@ -405,6 +583,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/premium': {
       id: '/premium'
       path: '/premium'
@@ -424,6 +609,13 @@ declare module '@tanstack/react-router' {
       path: '/modules'
       fullPath: '/modules'
       preLoaderRoute: typeof ModulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/integrations': {
@@ -459,6 +651,13 @@ declare module '@tanstack/react-router' {
       path: '/docs'
       fullPath: '/docs'
       preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cookies': {
@@ -517,6 +716,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/vs/wick': {
       id: '/vs/wick'
       path: '/vs/wick'
@@ -524,12 +730,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VsWickRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dashboard/settings': {
+      id: '/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/servers': {
+      id: '/dashboard/servers'
+      path: '/servers'
+      fullPath: '/dashboard/servers'
+      preLoaderRoute: typeof DashboardServersRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/premium': {
+      id: '/dashboard/premium'
+      path: '/premium'
+      fullPath: '/dashboard/premium'
+      preLoaderRoute: typeof DashboardPremiumRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/notifications': {
+      id: '/dashboard/notifications'
+      path: '/notifications'
+      fullPath: '/dashboard/notifications'
+      preLoaderRoute: typeof DashboardNotificationsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/modules': {
+      id: '/dashboard/modules'
+      path: '/modules'
+      fullPath: '/dashboard/modules'
+      preLoaderRoute: typeof DashboardModulesRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/logs': {
+      id: '/dashboard/logs'
+      path: '/logs'
+      fullPath: '/dashboard/logs'
+      preLoaderRoute: typeof DashboardLogsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/audit': {
+      id: '/dashboard/audit'
+      path: '/audit'
+      fullPath: '/dashboard/audit'
+      preLoaderRoute: typeof DashboardAuditRouteImport
+      parentRoute: typeof DashboardRoute
+    }
+    '/dashboard/analytics': {
+      id: '/dashboard/analytics'
+      path: '/analytics'
+      fullPath: '/dashboard/analytics'
+      preLoaderRoute: typeof DashboardAnalyticsRouteImport
+      parentRoute: typeof DashboardRoute
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
       path: '/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof BlogRoute
+    }
+    '/dashboard/servers/$serverId': {
+      id: '/dashboard/servers/$serverId'
+      path: '/$serverId'
+      fullPath: '/dashboard/servers/$serverId'
+      preLoaderRoute: typeof DashboardServersServerIdRouteImport
+      parentRoute: typeof DashboardServersRoute
     }
   }
 }
@@ -544,6 +813,45 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface DashboardServersRouteChildren {
+  DashboardServersServerIdRoute: typeof DashboardServersServerIdRoute
+}
+
+const DashboardServersRouteChildren: DashboardServersRouteChildren = {
+  DashboardServersServerIdRoute: DashboardServersServerIdRoute,
+}
+
+const DashboardServersRouteWithChildren =
+  DashboardServersRoute._addFileChildren(DashboardServersRouteChildren)
+
+interface DashboardRouteChildren {
+  DashboardAnalyticsRoute: typeof DashboardAnalyticsRoute
+  DashboardAuditRoute: typeof DashboardAuditRoute
+  DashboardLogsRoute: typeof DashboardLogsRoute
+  DashboardModulesRoute: typeof DashboardModulesRoute
+  DashboardNotificationsRoute: typeof DashboardNotificationsRoute
+  DashboardPremiumRoute: typeof DashboardPremiumRoute
+  DashboardServersRoute: typeof DashboardServersRouteWithChildren
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+}
+
+const DashboardRouteChildren: DashboardRouteChildren = {
+  DashboardAnalyticsRoute: DashboardAnalyticsRoute,
+  DashboardAuditRoute: DashboardAuditRoute,
+  DashboardLogsRoute: DashboardLogsRoute,
+  DashboardModulesRoute: DashboardModulesRoute,
+  DashboardNotificationsRoute: DashboardNotificationsRoute,
+  DashboardPremiumRoute: DashboardPremiumRoute,
+  DashboardServersRoute: DashboardServersRouteWithChildren,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+}
+
+const DashboardRouteWithChildren = DashboardRoute._addFileChildren(
+  DashboardRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
@@ -553,14 +861,17 @@ const rootRouteChildren: RootRouteChildren = {
   CommandsRoute: CommandsRoute,
   ContactRoute: ContactRoute,
   CookiesRoute: CookiesRoute,
+  DashboardRoute: DashboardRouteWithChildren,
   DocsRoute: DocsRoute,
   EnterpriseRoute: EnterpriseRoute,
   FaqRoute: FaqRoute,
   FeaturesRoute: FeaturesRoute,
   IntegrationsRoute: IntegrationsRoute,
+  LoginRoute: LoginRoute,
   ModulesRoute: ModulesRoute,
   PartnersRoute: PartnersRoute,
   PremiumRoute: PremiumRoute,
+  PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
   RoadmapRoute: RoadmapRoute,
   SecurityRoute: SecurityRoute,

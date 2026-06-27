@@ -1,45 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { PageHeader } from "@/components/site/PageHeader";
-import { ShieldAlert, ShieldX, Bot, UserCheck, Ticket, ScrollText, Heart, Crown, ChevronRight, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { Bot, CheckCircle2, ChevronRight, ScrollText, ShieldAlert, Ticket, UserCheck } from "lucide-react";
 
-export const Route = createFileRoute("/modules")({
+export const Route = createFileRoute('/modules')({
   head: () => ({
     meta: [
-      { title: "Modules Showcase — Titanium Security Discord Bot" },
-      { name: "description", content: "Explore the core engine capabilities of Titanium Security. Learn how Antinuke, Automod, Verification, Tickets and Logging operate under extreme server conditions." },
-      { property: "og:title", content: "Modules Showcase — Titanium Security Discord Bot" },
-      { property: "og:description", content: "Deep dive into Titanium's security architecture: Antinuke, zero-latency Automod, CAPTCHA gates, HTML ticket logs, and append-only audits." },
+      { title: "Advanced Protection Modules Showcase — Titanium Security" },
+      { name: "description", content: "Interactive walkthrough of Titanium's key defense-in-depth components: Anti-nuke systems, automod filters, role gates, and live audit streams." },
+      { property: "og:title", content: "Advanced Protection Modules Showcase — Titanium Security" },
+      { property: "og:description", content: "Granular details and console outputs for Titanium Antinuke, Automod, Verification, Tickets and Logging." },
       { property: "og:url", content: "https://titaniumsecurity.dpdns.org/modules" },
+      { property: "og:image", content: "https://titaniumsecurity.dpdns.org/og-image.png" },
     ],
     links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org/modules" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "name": "Titanium Security Bot Modules",
-          "image": "https://titaniumsecurity.dpdns.org/og-image.png",
-          "description": "Antinuke protection, automod, ticketing, custom role configuration, and verification tools for Discord.",
-          "brand": {
-            "@type": "Brand",
-            "name": "Titanium Security"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "0.00",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
-        })
-      }
-    ]
   }),
-  component: ModulesPage,
-});
+  });
 
 interface ModuleDetail {
   id: string;
@@ -198,98 +175,3 @@ const moduleDetails: ModuleDetail[] = [
   }
 ];
 
-function ModulesPage() {
-  const [activeTab, setActiveTab] = useState("antinuke");
-  const activeModule = moduleDetails.find((m) => m.id === activeTab) || moduleDetails[0];
-
-  return (
-    <SiteShell>
-      <PageHeader eyebrow="Modules" title="Inside the core engine." sub="Independently configurable, highly optimized modules to run your community secure and clean." />
-
-      <section className="mx-auto max-w-6xl px-6 pb-28">
-        <div className="grid gap-8 lg:grid-cols-[250px_1fr]">
-          {/* Vertical Tabs Sidebar */}
-          <div className="flex flex-col gap-2">
-            {moduleDetails.map((m) => {
-              const Icon = m.icon;
-              return (
-                <button
-                  key={m.id}
-                  onClick={() => setActiveTab(m.id)}
-                  className={`flex items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm font-medium transition-all ${activeTab === m.id
-                      ? "bg-brand text-white shadow-lg shadow-brand/20"
-                      : "glass hover:bg-white/[0.06] text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  <Icon className="size-4 shrink-0" />
-                  <span className="flex-1">{m.name}</span>
-                  <ChevronRight className={`size-3.5 opacity-50 transition-transform ${activeTab === m.id ? "translate-x-0.5" : ""}`} />
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Tab Content Panel */}
-          <div className="glass rounded-3xl p-8 lg:p-10">
-            <div className="flex items-center gap-4">
-              <div className="grid size-12 place-items-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/30">
-                <activeModule.icon className="size-6" />
-              </div>
-              <div>
-                <h2 className="font-display text-2xl font-bold">{activeModule.name}</h2>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-brand">{activeModule.tagline}</p>
-              </div>
-            </div>
-
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{activeModule.desc}</p>
-
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
-              <div>
-                <h3 className="mb-4 font-mono text-[10px] uppercase tracking-widest text-foreground font-semibold">Features Include</h3>
-                <ul className="space-y-3">
-                  {activeModule.features.map((f, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-muted-foreground">
-                      <span className="mt-0.5 size-1.5 shrink-0 rounded-full bg-brand" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="mb-4 font-mono text-[10px] uppercase tracking-widest text-foreground font-semibold">Core Benefits</h3>
-                <ul className="space-y-3">
-                  {activeModule.benefits.map((b, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-xs text-muted-foreground">
-                      <CheckCircle2 className="size-4 shrink-0 text-emerald-400" />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Visual/Console mockup */}
-            <div className="mt-8">
-              <h3 className="mb-3 font-mono text-[10px] uppercase tracking-widest text-foreground font-semibold">Console Output Preview</h3>
-              <div className="rounded-xl border border-border/60 bg-black/45 p-5 font-mono text-[11px] leading-relaxed text-emerald-300 shadow-inner">
-                <div className="mb-2.5 border-b border-border/30 pb-2 text-[10px] text-muted-foreground flex justify-between">
-                  <span>console :: {activeModule.mockup.title}</span>
-                  <span className="flex items-center gap-1.5">
-                    <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    ONLINE
-                  </span>
-                </div>
-                <div className="space-y-1.5">
-                  {activeModule.mockup.lines.map((line, idx) => (
-                    <p key={idx}>{line}</p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </SiteShell>
-  );
-}
