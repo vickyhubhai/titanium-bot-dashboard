@@ -1,10 +1,13 @@
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode, lazy, Suspense } from "react";
 import { Nav } from "./Nav";
 import { Footer } from "./Footer";
 import { CursorGlow } from "./CursorGlow";
 import { SplashScreen } from "./SplashScreen";
 import { PageTransition } from "./PageTransition";
-import { SearchDialog } from "./SearchDialog";
+
+const SearchDialog = lazy(() =>
+  import("./SearchDialog").then((m) => ({ default: m.SearchDialog }))
+);
 
 export function SiteShell({ children }: { children: ReactNode }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -31,7 +34,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />
-      <SearchDialog isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {isSearchOpen && (
+        <Suspense fallback={null}>
+          <SearchDialog isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+        </Suspense>
+      )}
     </div>
   );
 }

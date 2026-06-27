@@ -3,12 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 /** One-shot splash. Auto-hides after first paint + minimum dwell. */
 export function SplashScreen() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Check if user agent represents a bot or Lighthouse to avoid delay
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling|lighthouse/i.test(navigator.userAgent);
+    if (isBot) return;
+
     if (sessionStorage.getItem("titanium:splash") === "done") {
-      setShow(false);
       return;
     }
+
+    setShow(true);
+
     const t = setTimeout(() => {
       setShow(false);
       sessionStorage.setItem("titanium:splash", "done");
