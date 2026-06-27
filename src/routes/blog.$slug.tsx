@@ -59,7 +59,7 @@ export const Route = createFileRoute('/blog/$slug')({
     const post = loaderData?.post;
     const title = post ? `${post.t} — Sentinel Blog` : "Post — Sentinel Blog";
     const desc = post?.d ?? "An article from the Sentinel blog.";
-    const url = `https://astral-dashboard-73.lovable.app/blog/${params.slug}`;
+    const url = `https://titaniumsecurity.dpdns.org//blog/${params.slug}`;
     return {
       meta: [
         { title },
@@ -72,19 +72,19 @@ export const Route = createFileRoute('/blog/$slug')({
       links: [{ rel: "canonical", href: url }],
       scripts: post
         ? [{
-            type: "application/ld+json",
-            children: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              headline: post.t,
-              description: post.d,
-              datePublished: post.date,
-              articleSection: post.tag,
-              url,
-            }),
-          }]
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.t,
+            description: post.d,
+            datePublished: post.date,
+            articleSection: post.tag,
+            url,
+          }),
+        }]
         : undefined,
     };
   },
-  });
+});
 

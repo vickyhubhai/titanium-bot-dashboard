@@ -21,7 +21,7 @@ export const Route = createFileRoute('/pricing')({
           name: "Sentinel",
           description: "Enterprise Discord security, moderation and analytics platform with antinuke, automod, verification, tickets and audit intelligence.",
           brand: { "@type": "Brand", name: "Sentinel" },
-          url: "https://astral-dashboard-73.lovable.app/pricing",
+          url: "https://titaniumsecurity.dpdns.org//pricing",
           offers: {
             "@type": "AggregateOffer",
             priceCurrency: "USD",
@@ -35,7 +35,7 @@ export const Route = createFileRoute('/pricing')({
                 price: "0",
                 priceCurrency: "USD",
                 description: "Up to 3 servers, core antinuke & automod, verification & tickets, 7-day audit retention.",
-                url: "https://astral-dashboard-73.lovable.app/pricing",
+                url: "https://titaniumsecurity.dpdns.org//pricing",
               },
               {
                 "@type": "Offer",
@@ -43,7 +43,7 @@ export const Route = createFileRoute('/pricing')({
                 price: "9.99",
                 priceCurrency: "USD",
                 description: "Unlimited servers, SuperAntinuke, custom branding, 90-day audit retention, priority hosting & SLA, advanced analytics.",
-                url: "https://astral-dashboard-73.lovable.app/pricing",
+                url: "https://titaniumsecurity.dpdns.org//pricing",
               },
               {
                 "@type": "Offer",
@@ -51,7 +51,7 @@ export const Route = createFileRoute('/pricing')({
                 price: "0",
                 priceCurrency: "USD",
                 description: "Dedicated infrastructure, SSO/SAML, custom integrations, 24/7 incident response, compliance reports. Custom pricing.",
-                url: "https://astral-dashboard-73.lovable.app/pricing",
+                url: "https://titaniumsecurity.dpdns.org//pricing",
               },
             ],
           },
@@ -59,7 +59,7 @@ export const Route = createFileRoute('/pricing')({
       },
     ],
   }),
-  });
+});
 
 const tiers = [
   {

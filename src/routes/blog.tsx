@@ -19,17 +19,17 @@ export const Route = createFileRoute('/blog')({
         "@type": "Blog",
         name: "Sentinel Blog",
         description: "Writing on Discord security, moderation strategy, and platform engineering.",
-        url: "https://astral-dashboard-73.lovable.app/blog",
+        url: "https://titaniumsecurity.dpdns.org//blog",
         blogPost: [
-          { "@type": "BlogPosting", headline: "Anatomy of a Discord nuke", datePublished: "2026-06-12", url: "https://astral-dashboard-73.lovable.app/blog" },
-          { "@type": "BlogPosting", headline: "Automod, but make it readable", datePublished: "2026-05-28", url: "https://astral-dashboard-73.lovable.app/blog" },
-          { "@type": "BlogPosting", headline: "Tickets, redesigned from first principles", datePublished: "2026-05-04", url: "https://astral-dashboard-73.lovable.app/blog" },
-          { "@type": "BlogPosting", headline: "A performance budget for moderation bots", datePublished: "2026-04-17", url: "https://astral-dashboard-73.lovable.app/blog" },
+          { "@type": "BlogPosting", headline: "Anatomy of a Discord nuke", datePublished: "2026-06-12", url: "https://titaniumsecurity.dpdns.org//blog" },
+          { "@type": "BlogPosting", headline: "Automod, but make it readable", datePublished: "2026-05-28", url: "https://titaniumsecurity.dpdns.org//blog" },
+          { "@type": "BlogPosting", headline: "Tickets, redesigned from first principles", datePublished: "2026-05-04", url: "https://titaniumsecurity.dpdns.org//blog" },
+          { "@type": "BlogPosting", headline: "A performance budget for moderation bots", datePublished: "2026-04-17", url: "https://titaniumsecurity.dpdns.org//blog" },
         ],
       }),
     }],
   }),
-  });
+});
 
 const posts = [
   { slug: "anatomy-of-a-nuke", t: "Anatomy of a Discord nuke", d: "How attackers chain webhooks, role edits and bulk deletes — and how Sentinel breaks the chain in under 200ms.", tag: "Security", date: "Jun 12, 2026" },

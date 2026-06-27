@@ -19,9 +19,9 @@ export const Route = createFileRoute('/vs/wick')({
           "Sub-20ms decisioning, forensic logging, and a unified dashboard. See how Sentinel compares to Wick on features, performance and price.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://astral-dashboard-73.lovable.app/vs/wick" },
+      { property: "og:url", content: "https://titaniumsecurity.dpdns.org//vs/wick" },
     ],
-    links: [{ rel: "canonical", href: "https://astral-dashboard-73.lovable.app/vs/wick" }],
+    links: [{ rel: "canonical", href: "https://titaniumsecurity.dpdns.org//vs/wick" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -58,7 +58,7 @@ export const Route = createFileRoute('/vs/wick')({
       },
     ],
   }),
-  });
+});
 
 const rows: { feature: string; sentinel: string | boolean; wick: string | boolean }[] = [
   { feature: "Antinuke (webhook, role, channel, ban)", sentinel: true, wick: true },

@@ -19,12 +19,12 @@ export const Route = createFileRoute('/about')({
         "@context": "https://schema.org",
         "@type": "AboutPage",
         name: "About Sentinel",
-        url: "https://astral-dashboard-73.lovable.app/about",
+        url: "https://titaniumsecurity.dpdns.org//about",
         description: "The story, principles, and team behind Sentinel — a small team obsessed with digital safety.",
         mainEntity: {
           "@type": "Organization",
           name: "Sentinel",
-          url: "https://astral-dashboard-73.lovable.app",
+          url: "https://titaniumsecurity.dpdns.org/",
           description: "Sentinel protects Discord communities with sub-20ms decisioning and defence-in-depth security.",
           member: [
             { "@type": "Person", name: "Aanya Verma", jobTitle: "Founder · Security" },
@@ -42,7 +42,7 @@ export const Route = createFileRoute('/about')({
       }),
     }],
   }),
-  });
+});
 
 const principles = [
   { k: "Sovereignty first", d: "Your community, your data, your rules. We never train models on guild content." },

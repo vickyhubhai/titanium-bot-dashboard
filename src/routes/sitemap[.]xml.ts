@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://astral-dashboard-73.lovable.app";
+const BASE_URL = "https://titaniumsecurity.dpdns.org";
 
 interface SitemapEntry {
   path: string;
