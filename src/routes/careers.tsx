@@ -6,15 +6,15 @@ import { ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute('/careers')({
   head: () => ({
     meta: [
-      { title: "Careers — Sentinel" },
+      { title: "Careers — Titanium Security" },
       { name: "description", content: "Join a small, senior team building defensive infrastructure for the world's largest Discord communities." },
-      { property: "og:title", content: "Careers — Sentinel" },
-      { property: "og:description", content: "Open roles at Sentinel — remote-first, senior-only, and obsessed with the craft of community defence." },
+      { property: "og:title", content: "Careers — Titanium Security" },
+      { property: "og:description", content: "Open roles at Titanium Security — remote-first, senior-only, and obsessed with the craft of community defence." },
       { property: "og:url", content: "/careers" },
     ],
     links: [{ rel: "canonical", href: "/careers" }],
   }),
-  });
+});
 
 const roles = [
   { t: "Senior Platform Engineer", loc: "Remote · EU/IN", dept: "Engineering" },

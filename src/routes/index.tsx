@@ -9,9 +9,9 @@ import { PricingTeaser } from "@/components/site/PricingTeaser";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sentinel — Enterprise Discord Security & Moderation" },
+      { title: "Titanium Security — Enterprise Discord Security & Moderation" },
       { name: "description", content: "Automate sovereignty over your Discord server. Real-time antinuke, intelligent automod, forensic logging, tickets and analytics in one refined dashboard." },
-      { property: "og:title", content: "Sentinel — Enterprise Discord Security" },
+      { property: "og:title", content: "Titanium Security — Enterprise Discord Security" },
       { property: "og:description", content: "The command center for Discord — antinuke, automod, verification, tickets and analytics." },
       { property: "og:url", content: "/" },
     ],

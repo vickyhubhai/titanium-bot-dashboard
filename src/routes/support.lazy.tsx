@@ -9,9 +9,9 @@ export const Route = createLazyFileRoute('/support')({
 });
 
 const faqs = [
-  { q: "Is Sentinel free?", a: "Yes. The Free plan covers up to 3 servers with core antinuke, automod, verification and tickets." },
-  { q: "How do I add Sentinel to my server?", a: "Open the dashboard, sign in with Discord, and authorise the bot on the server you want to protect." },
-  { q: "Will Sentinel work alongside other bots?", a: "Yes. Sentinel respects role hierarchy and can be configured to ignore actions taken by trusted bots." },
+  { q: "Is Titanium Security free?", a: "Yes. The Free plan covers up to 3 servers with core antinuke, automod, verification and tickets." },
+  { q: "How do I add Titanium Security to my server?", a: "Open the dashboard, sign in with Discord, and authorise the bot on the server you want to protect." },
+  { q: "Will Titanium Security work alongside other bots?", a: "Yes. Titanium Security respects role hierarchy and can be configured to ignore actions taken by trusted bots." },
   { q: "How is my data handled?", a: "Configuration and logs are encrypted at rest. We never train models on community content." },
   { q: "Can I export my settings?", a: "Premium servers get import/export and on-demand backups from the dashboard." },
   { q: "How fast is incident response?", a: "Premium customers route to a priority queue with a 4-hour business-day SLA." },

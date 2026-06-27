@@ -41,7 +41,7 @@ function LogsPage() {
 
   return (
     <>
-      <Topbar title="Live logs" subtitle="Streaming events across every Sentinel subsystem." />
+      <Topbar title="Live logs" subtitle="Streaming events across every Titanium Security subsystem." />
       <div className="p-6 lg:p-10">
         <div className="mb-4 flex flex-wrap items-center gap-3">
           <div className="glass-subtle flex flex-1 items-center gap-2 rounded-full px-4 py-2">

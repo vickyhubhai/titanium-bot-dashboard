@@ -6,11 +6,11 @@ import { ArrowUpRight, Users, MessageSquare, Shield, Activity } from "lucide-rea
 export const Route = createFileRoute('/dashboard/analytics')({
   head: () => ({
     meta: [
-      { title: "Analytics — Sentinel" },
+      { title: "Analytics — Titanium Security" },
       { name: "robots", content: "noindex" },
     ],
   }),
-  });
+});
 
 const kpis = [
   { icon: Users, k: "Active members", v: "12,431", d: "+8.2%" },

@@ -6,10 +6,10 @@ import { CursorGlow } from "@/components/site/CursorGlow";
 export const Route = createFileRoute('/dashboard')({
   head: () => ({
     meta: [
-      { title: "Dashboard — Sentinel" },
-      { name: "description", content: "Manage your Discord servers, modules and security from the Sentinel dashboard." },
+      { title: "Dashboard — Titanium Security" },
+      { name: "description", content: "Manage your Discord servers, modules and security from the Titanium Security dashboard." },
       { name: "robots", content: "noindex" },
     ],
   }),
-  });
+});
 

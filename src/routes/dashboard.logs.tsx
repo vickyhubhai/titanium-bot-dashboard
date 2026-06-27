@@ -4,8 +4,8 @@ import { useMemo, useState } from "react";
 import { Search, Download } from "lucide-react";
 
 export const Route = createFileRoute('/dashboard/logs')({
-  head: () => ({ meta: [{ title: "Logs — Sentinel" }, { name: "robots", content: "noindex" }] }),
-  });
+  head: () => ({ meta: [{ title: "Logs — Titanium Security" }, { name: "robots", content: "noindex" }] }),
+});
 
 type Log = { t: string; level: "info" | "warn" | "error"; module: string; msg: string };
 

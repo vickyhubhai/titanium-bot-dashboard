@@ -41,7 +41,7 @@ function RoadmapPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Roadmap"
-        title="Where Sentinel is going next."
+        title="Where Titanium Security is going next."
         sub="We share a public roadmap because predictability is a feature. Dates are intentionally omitted — outcomes are not."
       />
       <section className="mx-auto grid max-w-6xl gap-5 px-6 pb-28 md:grid-cols-3">

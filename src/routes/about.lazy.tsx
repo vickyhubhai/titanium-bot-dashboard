@@ -27,7 +27,7 @@ function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="Built for the few who take community seriously."
-        sub="Sentinel started as a defensive tool for a single 200k-member server under sustained attack. Today it protects thousands of communities with the same engineering discipline."
+        sub="Titanium Security started as a defensive tool for a single 200k-member server under sustained attack. Today it protects thousands of communities with the same engineering discipline."
       />
       <section className="mx-auto grid max-w-5xl gap-4 px-6 pb-16 md:grid-cols-2">
         {principles.map((p, i) => (

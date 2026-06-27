@@ -7,14 +7,14 @@ import { useMemo, useState } from "react";
 export const Route = createFileRoute('/commands')({
   head: () => ({
     meta: [
-      { title: "Commands — Sentinel" },
-      { name: "description", content: "Every Sentinel command, searchable. Slash commands, prefix commands and context menus." },
-      { property: "og:title", content: "Commands — Sentinel" },
+      { title: "Commands — Titanium Security" },
+      { name: "description", content: "Every Titanium Security command, searchable. Slash commands, prefix commands and context menus." },
+      { property: "og:title", content: "Commands — Titanium Security" },
       { property: "og:url", content: "/commands" },
     ],
     links: [{ rel: "canonical", href: "/commands" }],
   }),
-  });
+});
 
 type Cmd = { name: string; category: string; usage: string; desc: string; premium?: boolean };
 

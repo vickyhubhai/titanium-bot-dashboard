@@ -20,7 +20,7 @@ const perks = [
 function PremiumPage() {
   return (
     <>
-      <Topbar title="Premium" subtitle="Upgrade your guilds with the full Sentinel feature set." />
+      <Topbar title="Premium" subtitle="Upgrade your guilds with the full Titanium Security feature set." />
       <div className="grid gap-6 p-6 lg:p-10">
         <div className="glass relative overflow-hidden rounded-3xl p-8 md:p-12">
           <div className="pointer-events-none absolute -right-20 -top-20 size-80 rounded-full bg-brand/30 blur-3xl" />
@@ -30,10 +30,10 @@ function PremiumPage() {
               Premium
             </div>
             <h2 className="font-display text-4xl font-extrabold leading-tight md:text-5xl">
-              Unlock everything Sentinel can do.
+              Unlock everything Titanium Security can do.
             </h2>
             <p className="mt-4 max-w-lg text-muted-foreground">
-              Premium turns Sentinel from a defensive baseline into a complete community operating system.
+              Premium turns Titanium Security from a defensive baseline into a complete community operating system.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link to="/pricing" className="rounded-xl bg-gradient-to-r from-brand to-brand-glow px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand/30">

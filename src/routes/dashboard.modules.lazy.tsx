@@ -34,7 +34,7 @@ const modules: Module[] = [
   { name: "Vanity Roles", group: "Roles", desc: "Reward members based on custom status.", icon: Crown, premium: true },
   { name: "Ticket System", group: "Support", desc: "Threaded tickets with queues and SLAs.", icon: Ticket, defaultOn: true },
   { name: "Join2Create", group: "Voice", desc: "Auto-spawn private voice channels.", icon: Mic2 },
-  { name: "Custom Bot", group: "Branding", desc: "White-label Sentinel under your own bot.", icon: Bot, premium: true },
+  { name: "Custom Bot", group: "Branding", desc: "White-label Titanium Security under your own bot.", icon: Bot, premium: true },
   { name: "Reaction Roles", group: "Roles", desc: "Self-assignable roles via reactions.", icon: Hash, defaultOn: true },
   { name: "Verification", group: "Security", desc: "Friction-tuned member verification flows.", icon: UserCheck, defaultOn: true },
   { name: "Backup System", group: "Operations", desc: "Snapshots of roles, channels and permissions.", icon: Database, premium: true },
@@ -91,9 +91,8 @@ function ModulesPage() {
               <button
                 key={g}
                 onClick={() => setGroup(g)}
-                className={`rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors ${
-                  group === g ? "bg-brand text-white" : "glass-subtle text-muted-foreground hover:text-foreground"
-                }`}
+                className={`rounded-full px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors ${group === g ? "bg-brand text-white" : "glass-subtle text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {g}
               </button>

@@ -48,7 +48,7 @@ function IntegrationsPage() {
       <PageHeader
         eyebrow="Integrations"
         title="One platform, every surface your team already uses."
-        sub="Sentinel speaks the protocols your stack already speaks. Stream events, sync rules, route alerts — without leaving the dashboard."
+        sub="Titanium Security speaks the protocols your stack already speaks. Stream events, sync rules, route alerts — without leaving the dashboard."
       />
       <section className="mx-auto grid max-w-6xl gap-6 px-6 pb-28 md:grid-cols-2">
         {groups.map((g, gi) => (

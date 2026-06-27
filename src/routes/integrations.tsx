@@ -6,15 +6,15 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute('/integrations')({
   head: () => ({
     meta: [
-      { title: "Integrations — Sentinel" },
-      { name: "description", content: "Connect Sentinel to the tools your team already runs — Discord, GitHub, Notion, Linear, PagerDuty, Datadog and more." },
-      { property: "og:title", content: "Integrations — Sentinel" },
+      { title: "Integrations — Titanium Security" },
+      { name: "description", content: "Connect Titanium Security to the tools your team already runs — Discord, GitHub, Notion, Linear, PagerDuty, Datadog and more." },
+      { property: "og:title", content: "Integrations — Titanium Security" },
       { property: "og:description", content: "Stream events, sync rules, and route alerts across the tools your operations team already lives in." },
       { property: "og:url", content: "/integrations" },
     ],
     links: [{ rel: "canonical", href: "/integrations" }],
   }),
-  });
+});
 
 const groups = [
   {

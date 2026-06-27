@@ -5,21 +5,21 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute('/status')({
   head: () => ({
     meta: [
-      { title: "Status — Sentinel" },
-      { name: "description", content: "Live operational status for every Sentinel subsystem." },
-      { property: "og:title", content: "Status — Sentinel" },
+      { title: "Status — Titanium Security" },
+      { name: "description", content: "Live operational status for every Titanium Security subsystem." },
+      { property: "og:title", content: "Status — Titanium Security" },
       { property: "og:url", content: "/status" },
     ],
     links: [{ rel: "canonical", href: "/status" }],
   }),
-  });
+});
 
 const systems = [
   { k: "Gateway", s: "Operational", up: 99.99 },
   { k: "API", s: "Operational", up: 99.98 },
   { k: "Dashboard", s: "Operational", up: 99.99 },
   { k: "Automod Engine", s: "Operational", up: 100 },
-  { k: "Antinuke Sentinel", s: "Operational", up: 100 },
+  { k: "Antinuke Titanium Security", s: "Operational", up: 100 },
   { k: "Analytics", s: "Operational", up: 99.95 },
   { k: "Webhooks", s: "Degraded", up: 99.61 },
 ];

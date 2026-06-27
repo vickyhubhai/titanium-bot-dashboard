@@ -6,17 +6,17 @@ import { Check, X } from "lucide-react";
 export const Route = createFileRoute('/vs/wick')({
   head: () => ({
     meta: [
-      { title: "Sentinel vs Wick — Discord Security Compared (2026)" },
+      { title: "Titanium Security vs Wick — Discord Security Compared (2026)" },
       {
         name: "description",
         content:
-          "Sentinel vs Wick: a side-by-side comparison of antinuke, automod, forensic logging, dashboard UX and pricing. The modern Wick alternative for serious Discord servers.",
+          "Titanium Security vs Wick: a side-by-side comparison of antinuke, automod, forensic logging, dashboard UX and pricing. The modern Wick alternative for serious Discord servers.",
       },
-      { property: "og:title", content: "Sentinel vs Wick — The Modern Discord Security Alternative" },
+      { property: "og:title", content: "Titanium Security vs Wick — The Modern Discord Security Alternative" },
       {
         property: "og:description",
         content:
-          "Sub-20ms decisioning, forensic logging, and a unified dashboard. See how Sentinel compares to Wick on features, performance and price.",
+          "Sub-20ms decisioning, forensic logging, and a unified dashboard. See how Titanium Security compares to Wick on features, performance and price.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://titaniumsecurity.dpdns.org//vs/wick" },
@@ -31,26 +31,26 @@ export const Route = createFileRoute('/vs/wick')({
           mainEntity: [
             {
               "@type": "Question",
-              name: "Is Sentinel a good Wick alternative?",
+              name: "Is Titanium Security a good Wick alternative?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Yes. Sentinel covers the same antinuke surface as Wick — webhook spam, mass bans, role escalation, channel deletion — with sub-20ms decisioning and a unified dashboard that Wick does not ship.",
+                text: "Yes. Titanium Security covers the same antinuke surface as Wick — webhook spam, mass bans, role escalation, channel deletion — with sub-20ms decisioning and a unified dashboard that Wick does not ship.",
               },
             },
             {
               "@type": "Question",
-              name: "What does Sentinel do that Wick does not?",
+              name: "What does Titanium Security do that Wick does not?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Sentinel ships a forensic audit timeline, typed automod policy, integrated tickets, multi-server analytics and SSO — features that require external bots or are unavailable on Wick.",
+                text: "Titanium Security ships a forensic audit timeline, typed automod policy, integrated tickets, multi-server analytics and SSO — features that require external bots or are unavailable on Wick.",
               },
             },
             {
               "@type": "Question",
-              name: "How much does Sentinel cost compared to Wick?",
+              name: "How much does Titanium Security cost compared to Wick?",
               acceptedAnswer: {
                 "@type": "Answer",
-                text: "Sentinel is free for up to 3 servers. Premium is $9.99/month for unlimited servers, advanced analytics and 90-day audit retention.",
+                text: "Titanium Security is free for up to 3 servers. Premium is $9.99/month for unlimited servers, advanced analytics and 90-day audit retention.",
               },
             },
           ],
@@ -60,17 +60,17 @@ export const Route = createFileRoute('/vs/wick')({
   }),
 });
 
-const rows: { feature: string; sentinel: string | boolean; wick: string | boolean }[] = [
-  { feature: "Antinuke (webhook, role, channel, ban)", sentinel: true, wick: true },
-  { feature: "Sub-20ms decisioning", sentinel: true, wick: false },
-  { feature: "Forensic audit timeline", sentinel: true, wick: false },
-  { feature: "Typed declarative automod policy", sentinel: true, wick: false },
-  { feature: "Unified web dashboard", sentinel: true, wick: "Limited" },
-  { feature: "Integrated ticket system", sentinel: true, wick: false },
-  { feature: "Multi-server analytics", sentinel: true, wick: false },
-  { feature: "SSO / SAML (Enterprise)", sentinel: true, wick: false },
-  { feature: "Free tier", sentinel: "Up to 3 servers", wick: "Limited" },
-  { feature: "Premium pricing", sentinel: "$9.99 / mo", wick: "$5 – $15 / mo" },
+const rows: { feature: string; "Titanium Security": string | boolean; wick: string | boolean }[] = [
+  { feature: "Antinuke (webhook, role, channel, ban)", "Titanium Security": true, wick: true },
+  { feature: "Sub-20ms decisioning", "Titanium Security": true, wick: false },
+  { feature: "Forensic audit timeline", "Titanium Security": true, wick: false },
+  { feature: "Typed declarative automod policy", "Titanium Security": true, wick: false },
+  { feature: "Unified web dashboard", "Titanium Security": true, wick: "Limited" },
+  { feature: "Integrated ticket system", "Titanium Security": true, wick: false },
+  { feature: "Multi-server analytics", "Titanium Security": true, wick: false },
+  { feature: "SSO / SAML (Enterprise)", "Titanium Security": true, wick: false },
+  { feature: "Free tier", "Titanium Security": "Up to 3 servers", wick: "Limited" },
+  { feature: "Premium pricing", "Titanium Security": "$9.99 / mo", wick: "$5 – $15 / mo" },
 ];
 
 function Cell({ value }: { value: string | boolean }) {

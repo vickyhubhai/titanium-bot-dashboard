@@ -7,7 +7,7 @@ export const Route = createLazyFileRoute('/docs')({
 });
 
 const sections = [
-  { icon: Zap, title: "Quick Start", desc: "Invite Sentinel and enable your first module in under 90 seconds." },
+  { icon: Zap, title: "Quick Start", desc: "Invite Titanium Security and enable your first module in under 90 seconds." },
   { icon: Shield, title: "Antinuke", desc: "Configure whitelists, action thresholds and trigger responses." },
   { icon: Activity, title: "Analytics", desc: "Read security pulse data and export forensic audit trails." },
   { icon: BookOpen, title: "Command Reference", desc: "Every slash command, argument and permission scope documented." },

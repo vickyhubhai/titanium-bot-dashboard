@@ -5,15 +5,15 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute('/changelog')({
   head: () => ({
     meta: [
-      { title: "Changelog — Sentinel" },
+      { title: "Changelog — Titanium Security" },
       { name: "description", content: "Every shipped change, ordered by date. Transparency is a feature." },
-      { property: "og:title", content: "Changelog — Sentinel" },
-      { property: "og:description", content: "Every shipped change to Sentinel, ordered by date — releases, fixes, and improvements with full transparency." },
+      { property: "og:title", content: "Changelog — Titanium Security" },
+      { property: "og:description", content: "Every shipped change to Titanium Security, ordered by date — releases, fixes, and improvements with full transparency." },
       { property: "og:url", content: "/changelog" },
     ],
     links: [{ rel: "canonical", href: "/changelog" }],
   }),
-  });
+});
 
 const releases = [
   { v: "2.14.0", d: "Jun 18, 2026", k: "Major", notes: ["SuperAntinuke now supports webhook signature verification.", "New analytics module with cohort retention.", "Backup snapshots can be scheduled hourly on Premium."] },

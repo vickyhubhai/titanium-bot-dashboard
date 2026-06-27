@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute('/about')({
   head: () => ({
     meta: [
-      { title: "About — Sentinel" },
-      { name: "description", content: "Sentinel is built by a small team obsessed with digital safety. Learn the story, the principles, and the people." },
-      { property: "og:title", content: "About — Sentinel" },
-      { property: "og:description", content: "The story, principles, and team behind Sentinel." },
+      { title: "About — Titanium Security" },
+      { name: "description", content: "Titanium Security is built by a small team obsessed with digital safety. Learn the story, the principles, and the people." },
+      { property: "og:title", content: "About — Titanium Security" },
+      { property: "og:description", content: "The story, principles, and team behind Titanium Security." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -18,14 +18,14 @@ export const Route = createFileRoute('/about')({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        name: "About Sentinel",
+        name: "About Titanium Security",
         url: "https://titaniumsecurity.dpdns.org//about",
-        description: "The story, principles, and team behind Sentinel — a small team obsessed with digital safety.",
+        description: "The story, principles, and team behind Titanium Security — a small team obsessed with digital safety.",
         mainEntity: {
           "@type": "Organization",
-          name: "Sentinel",
+          name: "Titanium Security",
           url: "https://titaniumsecurity.dpdns.org/",
-          description: "Sentinel protects Discord communities with sub-20ms decisioning and defence-in-depth security.",
+          description: "Titanium Security protects Discord communities with sub-20ms decisioning and defence-in-depth security.",
           member: [
             { "@type": "Person", name: "Aanya Verma", jobTitle: "Founder · Security" },
             { "@type": "Person", name: "Kiran Mehra", jobTitle: "Engineering" },

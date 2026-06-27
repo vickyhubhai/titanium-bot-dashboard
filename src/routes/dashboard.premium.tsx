@@ -3,8 +3,8 @@ import { Topbar } from "@/components/dashboard/Topbar";
 import { Sparkles, Check, Zap } from "lucide-react";
 
 export const Route = createFileRoute('/dashboard/premium')({
-  head: () => ({ meta: [{ title: "Premium — Sentinel" }, { name: "robots", content: "noindex" }] }),
-  });
+  head: () => ({ meta: [{ title: "Premium — Titanium Security" }, { name: "robots", content: "noindex" }] }),
+});
 
 const perks = [
   "Unlimited servers",

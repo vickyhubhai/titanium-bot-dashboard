@@ -8,19 +8,19 @@ import { z } from "zod";
 export const Route = createFileRoute('/contact')({
   head: () => ({
     meta: [
-      { title: "Contact — Sentinel" },
+      { title: "Contact — Titanium Security" },
       { name: "description", content: "Talk to sales, ask for help, or report a security issue. We respond fast." },
-      { property: "og:title", content: "Contact — Sentinel" },
+      { property: "og:title", content: "Contact — Titanium Security" },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
   }),
-  });
+});
 
 const channels = [
-  { icon: MessageSquare, k: "Sales", d: "Enterprise, custom branding, partnerships.", v: "sales@sentinel.app" },
-  { icon: Mail, k: "Support", d: "Premium customers get priority routing.", v: "support@sentinel.app" },
-  { icon: ShieldAlert, k: "Security", d: "Responsible disclosure, PGP available.", v: "security@sentinel.app" },
+  { icon: MessageSquare, k: "Sales", d: "Enterprise, custom branding, partnerships.", v: "sales@Titanium Security.app" },
+  { icon: Mail, k: "Support", d: "Premium customers get priority routing.", v: "support@Titanium Security.app" },
+  { icon: ShieldAlert, k: "Security", d: "Responsible disclosure, PGP available.", v: "security@Titanium Security.app" },
 ];
 
 const schema = z.object({

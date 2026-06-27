@@ -5,9 +5,9 @@ import { Check } from "lucide-react";
 export const Route = createFileRoute('/pricing')({
   head: () => ({
     meta: [
-      { title: "Pricing — Sentinel" },
+      { title: "Pricing — Titanium Security" },
       { name: "description", content: "Simple, transparent pricing. Free for growing communities. Premium for serious servers." },
-      { property: "og:title", content: "Pricing — Sentinel" },
+      { property: "og:title", content: "Pricing — Titanium Security" },
       { property: "og:description", content: "Free for growing communities. Premium for serious servers." },
       { property: "og:url", content: "/pricing" },
     ],
@@ -18,9 +18,9 @@ export const Route = createFileRoute('/pricing')({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Sentinel",
+          name: "Titanium Security",
           description: "Enterprise Discord security, moderation and analytics platform with antinuke, automod, verification, tickets and audit intelligence.",
-          brand: { "@type": "Brand", name: "Sentinel" },
+          brand: { "@type": "Brand", name: "Titanium Security" },
           url: "https://titaniumsecurity.dpdns.org//pricing",
           offers: {
             "@type": "AggregateOffer",

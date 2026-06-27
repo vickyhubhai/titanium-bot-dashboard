@@ -18,7 +18,7 @@ function FeaturesPage() {
           <span className="text-muted-foreground">built for the worst day.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
-          From real-time antinuke triggers to ML-driven analytics, Sentinel covers every surface of community operations.
+          From real-time antinuke triggers to ML-driven analytics, Titanium Security covers every surface of community operations.
         </p>
       </section>
       <ModulesGrid />

@@ -10,9 +10,9 @@ export const Route = createLazyFileRoute('/contact')({
 });
 
 const channels = [
-  { icon: MessageSquare, k: "Sales", d: "Enterprise, custom branding, partnerships.", v: "sales@sentinel.app" },
-  { icon: Mail, k: "Support", d: "Premium customers get priority routing.", v: "support@sentinel.app" },
-  { icon: ShieldAlert, k: "Security", d: "Responsible disclosure, PGP available.", v: "security@sentinel.app" },
+  { icon: MessageSquare, k: "Sales", d: "Enterprise, custom branding, partnerships.", v: "sales@Titanium Security.app" },
+  { icon: Mail, k: "Support", d: "Premium customers get priority routing.", v: "support@Titanium Security.app" },
+  { icon: ShieldAlert, k: "Security", d: "Responsible disclosure, PGP available.", v: "security@Titanium Security.app" },
 ];
 
 const schema = z.object({

@@ -13,7 +13,7 @@ function TermsPage() {
       <article className="mx-auto max-w-3xl space-y-8 px-6 pb-28 text-sm leading-7 text-muted-foreground">
         <section>
           <h2 className="mb-3 font-display text-xl font-bold text-foreground">Acceptable use</h2>
-          <p>You agree to use Sentinel only for lawful purposes and in accordance with Discord's Terms of Service and Community Guidelines.</p>
+          <p>You agree to use Titanium Security only for lawful purposes and in accordance with Discord's Terms of Service and Community Guidelines.</p>
         </section>
         <section>
           <h2 className="mb-3 font-display text-xl font-bold text-foreground">Service availability</h2>

@@ -5,10 +5,10 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute('/blog')({
   head: () => ({
     meta: [
-      { title: "Blog — Sentinel" },
+      { title: "Blog — Titanium Security" },
       { name: "description", content: "Writing on Discord security, moderation strategy, and platform engineering." },
-      { property: "og:title", content: "Blog — Sentinel" },
-      { property: "og:description", content: "Field notes on Discord security, moderation strategy, and the engineering behind Sentinel — fresh writing from the team." },
+      { property: "og:title", content: "Blog — Titanium Security" },
+      { property: "og:description", content: "Field notes on Discord security, moderation strategy, and the engineering behind Titanium Security — fresh writing from the team." },
       { property: "og:url", content: "/blog" },
     ],
     links: [{ rel: "canonical", href: "/blog" }],
@@ -17,7 +17,7 @@ export const Route = createFileRoute('/blog')({
       children: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Blog",
-        name: "Sentinel Blog",
+        name: "Titanium Security Blog",
         description: "Writing on Discord security, moderation strategy, and platform engineering.",
         url: "https://titaniumsecurity.dpdns.org//blog",
         blogPost: [
@@ -32,9 +32,9 @@ export const Route = createFileRoute('/blog')({
 });
 
 const posts = [
-  { slug: "anatomy-of-a-nuke", t: "Anatomy of a Discord nuke", d: "How attackers chain webhooks, role edits and bulk deletes — and how Sentinel breaks the chain in under 200ms.", tag: "Security", date: "Jun 12, 2026" },
+  { slug: "anatomy-of-a-nuke", t: "Anatomy of a Discord nuke", d: "How attackers chain webhooks, role edits and bulk deletes — and how Titanium Security breaks the chain in under 200ms.", tag: "Security", date: "Jun 12, 2026" },
   { slug: "automod-philosophy", t: "Automod, but make it readable", d: "Why we replaced regex rule lists with a typed declarative policy language.", tag: "Engineering", date: "May 28, 2026" },
-  { slug: "tickets-redesigned", t: "Tickets, redesigned from first principles", d: "Threaded, queued, auditable. The model behind Sentinel's new ticket pipeline.", tag: "Product", date: "May 04, 2026" },
+  { slug: "tickets-redesigned", t: "Tickets, redesigned from first principles", d: "Threaded, queued, auditable. The model behind Titanium Security's new ticket pipeline.", tag: "Product", date: "May 04, 2026" },
   { slug: "perf-budget", t: "A performance budget for moderation bots", d: "Why p99 latency under 50ms is the only target that matters during a raid.", tag: "Engineering", date: "Apr 17, 2026" },
 ];
 

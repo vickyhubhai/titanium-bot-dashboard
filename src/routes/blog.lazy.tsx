@@ -7,9 +7,9 @@ export const Route = createLazyFileRoute('/blog')({
 });
 
 const posts = [
-  { slug: "anatomy-of-a-nuke", t: "Anatomy of a Discord nuke", d: "How attackers chain webhooks, role edits and bulk deletes — and how Sentinel breaks the chain in under 200ms.", tag: "Security", date: "Jun 12, 2026" },
+  { slug: "anatomy-of-a-nuke", t: "Anatomy of a Discord nuke", d: "How attackers chain webhooks, role edits and bulk deletes — and how Titanium Security breaks the chain in under 200ms.", tag: "Security", date: "Jun 12, 2026" },
   { slug: "automod-philosophy", t: "Automod, but make it readable", d: "Why we replaced regex rule lists with a typed declarative policy language.", tag: "Engineering", date: "May 28, 2026" },
-  { slug: "tickets-redesigned", t: "Tickets, redesigned from first principles", d: "Threaded, queued, auditable. The model behind Sentinel's new ticket pipeline.", tag: "Product", date: "May 04, 2026" },
+  { slug: "tickets-redesigned", t: "Tickets, redesigned from first principles", d: "Threaded, queued, auditable. The model behind Titanium Security's new ticket pipeline.", tag: "Product", date: "May 04, 2026" },
   { slug: "perf-budget", t: "A performance budget for moderation bots", d: "Why p99 latency under 50ms is the only target that matters during a raid.", tag: "Engineering", date: "Apr 17, 2026" },
 ];
 

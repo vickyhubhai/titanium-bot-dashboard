@@ -5,15 +5,15 @@ import { PageHeader } from "@/components/site/PageHeader";
 export const Route = createFileRoute('/roadmap')({
   head: () => ({
     meta: [
-      { title: "Roadmap — Sentinel" },
-      { name: "description", content: "What we are building next. The Sentinel public roadmap, refreshed every quarter." },
-      { property: "og:title", content: "Roadmap — Sentinel" },
-      { property: "og:description", content: "Now, next, and later — the public Sentinel roadmap refreshed every quarter." },
+      { title: "Roadmap — Titanium Security" },
+      { name: "description", content: "What we are building next. The Titanium Security public roadmap, refreshed every quarter." },
+      { property: "og:title", content: "Roadmap — Titanium Security" },
+      { property: "og:description", content: "Now, next, and later — the public Titanium Security roadmap refreshed every quarter." },
       { property: "og:url", content: "/roadmap" },
     ],
     links: [{ rel: "canonical", href: "/roadmap" }],
   }),
-  });
+});
 
 const columns = [
   {

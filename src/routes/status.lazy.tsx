@@ -11,7 +11,7 @@ const systems = [
   { k: "API", s: "Operational", up: 99.98 },
   { k: "Dashboard", s: "Operational", up: 99.99 },
   { k: "Automod Engine", s: "Operational", up: 100 },
-  { k: "Antinuke Sentinel", s: "Operational", up: 100 },
+  { k: "Antinuke Titanium Security", s: "Operational", up: 100 },
   { k: "Analytics", s: "Operational", up: 99.95 },
   { k: "Webhooks", s: "Degraded", up: 99.61 },
 ];

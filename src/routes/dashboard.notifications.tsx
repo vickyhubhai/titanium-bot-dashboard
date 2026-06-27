@@ -4,8 +4,8 @@ import { useState } from "react";
 import { BellRing, ShieldAlert, Crown, Ticket } from "lucide-react";
 
 export const Route = createFileRoute('/dashboard/notifications')({
-  head: () => ({ meta: [{ title: "Notifications — Sentinel" }, { name: "robots", content: "noindex" }] }),
-  });
+  head: () => ({ meta: [{ title: "Notifications — Titanium Security" }, { name: "robots", content: "noindex" }] }),
+});
 
 type N = { id: number; icon: typeof BellRing; title: string; body: string; time: string; tone: string; read?: boolean };
 

@@ -11,7 +11,7 @@ const pillars = [
   { t: "Dedicated capacity", d: "Isolated shards sized to your community's peak — never queued behind a noisy neighbour." },
   { t: "Named support", d: "A two-engineer pod assigned to your account with shared incident channels." },
   { t: "Operational SLAs", d: "99.99% module availability, 15-minute response targets for severity-one incidents." },
-  { t: "Custom modules", d: "Bespoke moderation logic written and maintained by the Sentinel platform team." },
+  { t: "Custom modules", d: "Bespoke moderation logic written and maintained by the Titanium Security platform team." },
   { t: "Data residency", d: "Choose between EU, US, and Asia-Pacific operational regions for the runtime." },
   { t: "Procurement ready", d: "MSA, DPA, security questionnaires, and yearly billing on net-60 terms." },
 ];

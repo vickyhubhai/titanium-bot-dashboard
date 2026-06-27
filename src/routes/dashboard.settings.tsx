@@ -4,8 +4,8 @@ import { Download, Upload, Save, Palette, Globe, RotateCcw } from "lucide-react"
 import { useState } from "react";
 
 export const Route = createFileRoute('/dashboard/settings')({
-  head: () => ({ meta: [{ title: "Settings — Sentinel" }, { name: "robots", content: "noindex" }] }),
-  });
+  head: () => ({ meta: [{ title: "Settings — Titanium Security" }, { name: "robots", content: "noindex" }] }),
+});
 
 const themes = [
   { k: "obsidian", c: ["#0a0a14", "#6b6bff"] },

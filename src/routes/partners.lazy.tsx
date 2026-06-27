@@ -10,20 +10,20 @@ const tiers = [
   {
     n: "Referrer",
     p: "20% revshare",
-    d: "For consultants and creators who introduce communities to Sentinel.",
+    d: "For consultants and creators who introduce communities to Titanium Security.",
     perks: ["Unique referral link", "Quarterly payouts", "Co-marketing on request"],
   },
   {
     n: "Implementation",
     p: "Listed in directory",
-    d: "For agencies who configure and operate Sentinel on behalf of large guilds.",
+    d: "For agencies who configure and operate Titanium Security on behalf of large guilds.",
     perks: ["Multi-guild dashboard", "Priority engineering review", "Joint case studies"],
     featured: true,
   },
   {
     n: "Technology",
     p: "API + design partnership",
-    d: "For platforms that want to embed Sentinel data inside their own surfaces.",
+    d: "For platforms that want to embed Titanium Security data inside their own surfaces.",
     perks: ["Early API access", "Design-partner roadmap input", "Shared incident response"],
   },
 ];

@@ -7,9 +7,9 @@ export const Route = createLazyFileRoute('/cookies')({
 });
 
 const rows = [
-  { n: "sentinel_session", purpose: "Keeps you signed in to the dashboard between visits.", retention: "30 days", optional: false },
-  { n: "sentinel_theme", purpose: "Remembers your theme preference (system / dark / light).", retention: "1 year", optional: true },
-  { n: "sentinel_prefs", purpose: "Stores dashboard layout choices such as collapsed sidebars.", retention: "1 year", optional: true },
+  { n: "Titanium Security_session", purpose: "Keeps you signed in to the dashboard between visits.", retention: "30 days", optional: false },
+  { n: "Titanium Security_theme", purpose: "Remembers your theme preference (system / dark / light).", retention: "1 year", optional: true },
+  { n: "Titanium Security_prefs", purpose: "Stores dashboard layout choices such as collapsed sidebars.", retention: "1 year", optional: true },
 ];
 
 function CookiesPage() {
@@ -17,8 +17,8 @@ function CookiesPage() {
     <SiteShell>
       <PageHeader
         eyebrow="Cookies"
-        title="What Sentinel stores in your browser."
-        sub="This page is maintained by the Sentinel team and lists only the cookies and local-storage entries written by the dashboard today."
+        title="What Titanium Security stores in your browser."
+        sub="This page is maintained by the Titanium Security team and lists only the cookies and local-storage entries written by the dashboard today."
       />
       <section className="mx-auto max-w-4xl px-6 pb-28">
         <div className="glass overflow-hidden rounded-2xl">
@@ -39,9 +39,8 @@ function CookiesPage() {
                   <td className="px-5 py-4">{r.retention}</td>
                   <td className="px-5 py-4">
                     <span
-                      className={`rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest ${
-                        r.optional ? "bg-brand/15 text-brand" : "bg-surface text-muted-foreground"
-                      }`}
+                      className={`rounded-full px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest ${r.optional ? "bg-brand/15 text-brand" : "bg-surface text-muted-foreground"
+                        }`}
                     >
                       {r.optional ? "Optional" : "Required"}
                     </span>

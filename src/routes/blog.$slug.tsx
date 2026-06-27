@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 const posts: Record<string, { t: string; d: string; tag: string; date: string; body: string[] }> = {
   "anatomy-of-a-nuke": {
     t: "Anatomy of a Discord nuke",
-    d: "How attackers chain webhooks, role edits and bulk deletes — and how Sentinel breaks the chain in under 200ms.",
+    d: "How attackers chain webhooks, role edits and bulk deletes — and how Titanium Security breaks the chain in under 200ms.",
     tag: "Security",
     date: "Jun 12, 2026",
     body: [
@@ -27,7 +27,7 @@ const posts: Record<string, { t: string; d: string; tag: string; date: string; b
   },
   "tickets-redesigned": {
     t: "Tickets, redesigned from first principles",
-    d: "Threaded, queued, auditable. The model behind Sentinel's new ticket pipeline.",
+    d: "Threaded, queued, auditable. The model behind Titanium Security's new ticket pipeline.",
     tag: "Product",
     date: "May 04, 2026",
     body: [
@@ -57,8 +57,8 @@ export const Route = createFileRoute('/blog/$slug')({
   },
   head: ({ params, loaderData }) => {
     const post = loaderData?.post;
-    const title = post ? `${post.t} — Sentinel Blog` : "Post — Sentinel Blog";
-    const desc = post?.d ?? "An article from the Sentinel blog.";
+    const title = post ? `${post.t} — Titanium Security Blog` : "Post — Titanium Security Blog";
+    const desc = post?.d ?? "An article from the Titanium Security blog.";
     const url = `https://titaniumsecurity.dpdns.org//blog/${params.slug}`;
     return {
       meta: [

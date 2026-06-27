@@ -6,13 +6,13 @@ import { SecuritySection } from "@/components/site/SecuritySection";
 export const Route = createFileRoute('/features')({
   head: () => ({
     meta: [
-      { title: "Features — Sentinel" },
-      { name: "description", content: "Antinuke, automod, tickets, verification, giveaways, analytics — explore every Sentinel module." },
-      { property: "og:title", content: "Features — Sentinel" },
-      { property: "og:description", content: "Explore every Sentinel security and moderation module." },
+      { title: "Features — Titanium Security" },
+      { name: "description", content: "Antinuke, automod, tickets, verification, giveaways, analytics — explore every Titanium Security module." },
+      { property: "og:title", content: "Features — Titanium Security" },
+      { property: "og:description", content: "Explore every Titanium Security security and moderation module." },
       { property: "og:url", content: "/features" },
     ],
     links: [{ rel: "canonical", href: "/features" }],
   }),
-  });
+});
 
